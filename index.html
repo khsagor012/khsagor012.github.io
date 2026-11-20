@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>মোঃ কামরুল হাসান</title>
+<meta name="description" content="মোঃ কামরুল হাসান, আইসিটি শিক্ষক, লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর। শিক্ষা, গবেষণা, অভিজ্ঞতা ও শিক্ষার্থীদের জন্য নোট।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE a teacher's own site: confident, warm, academic first
+   IDEA a metro map of a career: one thick line with stations from SSC to today
+   PICTURE the Journey line on the home page; every page keeps the line colours
+   COLOUR white ground, ink black; red education, violet research, blue work, pink exams, amber teaching, green notes
+   TYPE Anek Bangla 800 display + Noto Sans Bengali text
+   LAYOUT laptop: name and photo, four counters, the journey line full width, then tiles; phone: stacked, vertical journey */
+:root{color-scheme:light;--bg:#ffffff;--ink:#111418;--mute:#545b67;--line:#e2e5ea;--card:#f5f6f8;--red:#e6261f;--blue:#0a5cff;--amber:#ffb400;--green:#00a05a;--violet:#7a3cff;--pink:#e0115f;--wa:#1fa855}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 "Noto Sans Bengali",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{font-family:"Anek Bangla","Noto Sans Bengali",sans-serif;line-height:1.15;margin:0;text-wrap:balance}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(30px,4.5vw,64px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.view[hidden]{display:none}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px max(5vw,16px)}
+nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;font-family:"Anek Bangla",sans-serif;font-weight:800;font-size:19px}
+.brand i{width:14px;height:14px;border-radius:50%;border:4px solid var(--red);flex:none}
+.links{display:flex;gap:2px;flex-wrap:wrap}
+.links a{text-decoration:none;font-weight:600;padding:8px 13px;border-radius:99px;font-size:15px;font-family:"Anek Bangla",sans-serif}
+.links a:hover,.links a:focus-visible{background:var(--card);outline:none}
+.links a[aria-current=page]{background:var(--ink);color:#fff}
+.menu{display:none;align-items:center;gap:8px;font:600 15px "Anek Bangla",sans-serif;min-height:44px;padding:0 14px;border-radius:12px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+.notice{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--green);color:#fff;font-size:15px;padding:8px 16px;text-align:center}
+.notice b{background:#fff;color:var(--green);border-radius:6px;padding:0 8px;font-size:13px}
+.notice a{color:#fff;font-weight:600}
+.notice[hidden]{display:none}
+
+/* hero */
+.hero{padding-bottom:10px}
+.top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+.ph{width:clamp(110px,14vw,168px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 20%;border:6px solid #fff;box-shadow:0 0 0 5px var(--ink),10px 10px 0 5px var(--amber)}
+.hi{font-family:"Anek Bangla",sans-serif;font-weight:700;color:var(--mute);font-size:18px;margin:0 0 4px}
+.hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.01em}
+.role{font-size:clamp(17px,1.9vw,21px);font-weight:600;margin:12px 0 0}
+.role span{display:inline-block;background:var(--ink);color:#fff;border-radius:8px;padding:1px 10px;margin-right:6px;font-size:.85em}
+.intro{max-width:66ch;color:var(--mute);margin:16px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{font:600 15.5px "Anek Bangla","Noto Sans Bengali",sans-serif;min-height:44px;padding:0 18px;border-radius:12px;border:0;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.o{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.wa{background:var(--wa)}
+.btn.g{background:var(--green)}
+.btn:focus-visible,.chip:focus-visible,.tile:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px}
+.ct{border-radius:18px;padding:18px 18px 16px;background:var(--c);color:#fff;position:relative;overflow:hidden}
+.ct.dk{color:var(--ink)}
+.ct b i{font-style:normal}
+.ct b{display:block;font-family:"Anek Bangla",sans-serif;font-size:clamp(34px,4vw,50px);font-weight:800;line-height:1}
+.ct strong{display:block;font-family:"Anek Bangla",sans-serif;font-size:18px;font-weight:700;margin-top:8px;line-height:1.25}
+.ct span{display:block;font-size:14px;opacity:.9;margin-top:2px}
+.ct::after{content:"";position:absolute;right:-26px;bottom:-26px;width:96px;height:96px;border-radius:50%;border:14px solid rgba(255,255,255,.22)}
+.jr{margin-top:34px;background:var(--card);border-radius:22px;padding:18px 18px 8px}
+.jr h2{font-size:24px;font-weight:800;padding:4px 6px 0}
+.jr p{margin:2px 6px 0;color:var(--mute);font-size:15px}
+.fig{position:relative;height:300px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font-family:"Anek Bangla","Noto Sans Bengali",sans-serif}
+.htitle{font-size:clamp(26px,3vw,34px);font-weight:800;margin:40px 0 16px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.tile{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;text-decoration:none;background:var(--card);border-radius:16px;padding:16px 18px;border-left:8px solid var(--c);transition:transform .15s}
+.tile:hover{transform:translateY(-2px)}
+.tile .ti{width:48px;height:48px;border-radius:14px;background:var(--c);display:grid;place-items:center}
+.tile svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile b{display:block;font-family:"Anek Bangla",sans-serif;font-size:20px;font-weight:800;line-height:1.2}
+.tile em{font-style:normal;color:var(--mute);font-size:14.5px}
+.tile .ar{font-size:24px;font-weight:700;color:var(--c)}
+@media(min-width:1000px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* section heads */
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.dot{width:30px;height:30px;border-radius:50%;border:7px solid var(--c);background:#fff;flex:none}
+.sec-h h2{font-size:clamp(30px,3.8vw,44px);font-weight:800}
+.sec-h .rule{flex:1;height:8px;border-radius:8px;background:var(--c)}
+.lead{color:var(--mute);margin:0 0 26px 44px;max-width:70ch}
+.tint{background:color-mix(in srgb,var(--c) 6%,#fff)}
+
+/* education */
+.edsum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.edsum div{border:2px solid var(--red);border-radius:16px;padding:14px 16px;background:#fff}
+.edsum b{display:block;font-family:"Anek Bangla",sans-serif;font-size:32px;font-weight:800;color:var(--red);line-height:1.1}
+.edsum span{font-size:14.5px;color:var(--mute)}
+.deg{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px}
+.deg .y{background:var(--red);color:#fff;padding:20px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.deg .y b{font-family:"Anek Bangla",sans-serif;font-size:26px;font-weight:800;line-height:1.1}
+.deg .y span{font-size:14px;opacity:.92}
+.deg .y.s2{background:#b51d18}
+.deg .body{padding:20px 22px}
+.deg h3{font-size:clamp(21px,2.3vw,26px);font-weight:800}
+.deg .sub{color:var(--mute);margin:4px 0 12px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:8px 18px;margin:0}
+.facts div{border-top:1px solid var(--line);padding-top:8px}
+.facts dt{font-size:13.5px;color:var(--mute)}
+.facts dd{margin:0;font-weight:600}
+.res{display:inline-flex;align-items:baseline;gap:8px;background:color-mix(in srgb,var(--red) 10%,#fff);border-radius:12px;padding:4px 12px;margin-top:12px}
+.res b{font-family:"Anek Bangla",sans-serif;font-size:26px;font-weight:800;color:var(--red)}
+.res span{font-size:14px}
+.pill{display:inline-block;font-size:13.5px;font-weight:600;background:var(--c);color:#fff;border-radius:99px;padding:2px 12px;margin:0 6px 8px 0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin-top:8px}
+.box{border:1.5px solid var(--line);border-radius:16px;padding:18px 20px;background:#fff}
+.box h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.box ul{margin:0;padding-left:20px}
+.box li{margin:4px 0}
+.lang{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;align-items:center}
+.lang .m{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.lang .m i{display:block;height:100%;background:var(--red);border-radius:5px}
+
+/* research */
+.paper{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;background:#fff;border-radius:18px;padding:clamp(18px,3vw,30px);border-top:8px solid var(--violet)}
+.paper h3{font-size:clamp(20px,2.1vw,25px);font-weight:700;line-height:1.3;font-family:"Noto Sans Bengali",sans-serif}
+.paper .j{margin:10px 0 12px;color:var(--mute);font-size:15px}
+.paper p{margin:0 0 14px}
+.stackfig{position:relative;min-height:300px}
+.stackfig>svg{position:absolute;inset:0;width:100%;height:100%}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin-top:20px}
+.sk{border:1.5px solid var(--line);border-radius:16px;padding:18px;background:#fff}
+.sk h4{margin:0 0 10px;font-size:18px;font-weight:800}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{background:color-mix(in srgb,var(--violet) 10%,#fff);border:1px solid color-mix(in srgb,var(--violet) 35%,transparent);border-radius:8px;padding:3px 10px;font-size:14.5px;font-weight:500}
+.tags span.hot{background:var(--violet);color:#fff;border-color:var(--violet)}
+
+/* experience */
+.xp-top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:26px}
+.xl{position:relative;padding-left:34px}
+.xl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:8px;border-radius:8px;background:linear-gradient(var(--blue),var(--amber) 35%,var(--amber) 70%,var(--pink))}
+.xi{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:16px}
+.xi::before{content:"";position:absolute;left:-31px;top:22px;width:22px;height:22px;border-radius:50%;background:#fff;border:6px solid var(--c)}
+.xi .when{display:inline-block;font:700 14px "Anek Bangla",sans-serif;background:var(--c);color:#fff;border-radius:8px;padding:2px 10px}
+.xi.dk .when{color:var(--ink)}
+.xi h3{font-size:clamp(20px,2.2vw,24px);font-weight:800;margin-top:8px}
+.xi .org{color:var(--mute);font-weight:600;margin-top:2px}
+.xi ul{margin:10px 0 0;padding-left:20px}
+.xi li{margin:5px 0}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:6px}
+.days div{background:#fff;border-radius:14px;padding:14px 18px;border-left:6px solid var(--amber);font:800 21px "Anek Bangla",sans-serif}
+.days div span{display:block;font:400 14.5px "Noto Sans Bengali",sans-serif;color:var(--mute)}
+
+/* exams */
+.exam{display:grid;gap:12px}
+.ex{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:center;background:#fff;border-radius:16px;padding:16px 20px;border-left:8px solid var(--pink)}
+.ex h3{font-size:22px;font-weight:800}
+.ex .s{color:var(--mute);font-size:15px}
+.stg{display:flex;flex-wrap:wrap;gap:4px}
+.stg span{font-size:14.5px;font-weight:600;padding:4px 12px;border-radius:99px;white-space:nowrap;background:var(--pink);color:#fff}
+.stg span.end{background:var(--ink)}
+
+/* notes */
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+.tools input{font:inherit;font-size:16px;padding:10px 16px;border-radius:99px;border:1.5px solid var(--line);background:#fff;color:var(--ink);flex:1 1 260px;min-height:46px}
+.tools input:focus{outline:3px solid color-mix(in srgb,var(--green) 40%,transparent);border-color:var(--green)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 15px "Anek Bangla",sans-serif;min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.cat{margin-top:24px}
+.cat h3{font-size:22px;font-weight:800;margin-bottom:12px}
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.file{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.file .ic{width:46px;height:56px;border-radius:6px;background:var(--green);color:#fff;display:grid;place-items:end center;font:700 12px/1 system-ui;padding-bottom:8px;clip-path:polygon(0 0,70% 0,100% 22%,100% 100%,0 100%)}
+.file h4{margin:0;font-size:17px;font-weight:700;line-height:1.35;font-family:"Noto Sans Bengali",sans-serif;overflow-wrap:anywhere}
+.file .meta{color:var(--mute);font-size:14px;margin:2px 0 10px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.file .btn{min-height:40px;font-size:15px;padding:0 14px}
+.empty{color:var(--mute);background:#fff;border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
+.msg{min-height:1.5em;color:var(--mute);font-size:14.5px;margin-top:12px}
+.up{margin-top:30px;border:2px dashed var(--green);border-radius:18px;padding:20px;background:#fff}
+.up[hidden]{display:none}
+.up h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.up ol{margin:0 0 14px;padding-left:22px}
+.up li{margin:5px 0}
+code{background:var(--card);border-radius:6px;padding:1px 6px;font-size:.92em;overflow-wrap:anywhere}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px}
+.cc{border-top:6px solid var(--c);background:var(--card);border-radius:16px;padding:18px 20px}
+.cc[hidden]{display:none}
+.cc b{display:block;font:800 19px "Anek Bangla",sans-serif;margin-bottom:2px}
+.cc a.v{font-weight:600;overflow-wrap:anywhere}
+.cc .btns{margin-top:12px}
+
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;font:600 15.5px "Anek Bangla",sans-serif;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:12px;border:1.5px solid var(--line);background:#fff}
+.pager a.nx{background:var(--ink);color:#fff;border-color:var(--ink);margin-left:auto}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:14.5px;padding:22px max(5vw,16px) 90px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.wafloat{position:fixed;right:16px;bottom:18px;z-index:15;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;font:700 15px "Anek Bangla",sans-serif;border-radius:99px;padding:0 18px 0 14px;height:52px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.wafloat svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.totop{position:fixed;right:16px;bottom:82px;z-index:15;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.totop.on{opacity:1;pointer-events:auto}
+@media(max-width:980px){.counters{grid-template-columns:repeat(2,minmax(0,1fr))}.edsum{grid-template-columns:repeat(2,minmax(0,1fr))}.paper{grid-template-columns:minmax(0,1fr)}.xp-top{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:860px){.menu{display:inline-flex}.links{display:none;position:absolute;right:0;left:0;top:calc(100% + 10px);background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(0,0,0,.1);flex-direction:column;padding:8px 0 14px;gap:2px}.links.open{display:flex}.links a{font-size:18px;padding:12px 16px;border-radius:12px}}
+@media(max-width:600px){.top{grid-template-columns:minmax(0,1fr)}.fig{height:640px}.deg{grid-template-columns:minmax(0,1fr)}.deg .y{flex-direction:row;align-items:baseline;padding:12px 18px}.ex{grid-template-columns:minmax(0,1fr)}.lead{margin-left:0}.ct strong{font-size:16px}.wafloat span{display:none}.wafloat{padding:0 14px}}
+@media(prefers-reduced-motion:reduce){.tile{transition:none}.fig .train{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#home"><i></i>মোঃ কামরুল হাসান</a>
+  <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Menu</button>
+  <div class="links" id="links">
+    <a href="#home">Home</a><a href="#education">Education</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#exams">BCS &amp; Exams</a><a href="#notes">Notes</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+<div class="notice" id="notice" hidden><b>NEW</b><span id="noticeText"></span><a href="#notes">Notes দেখো</a></div>
+
+<!-- HOME -->
+<header class="band hero view" id="home"><div class="wrap">
+  <div class="top">
+    <img class="ph" src="data:image/jpeg;base64,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" alt="মোঃ কামরুল হাসান">
+    <div>
+      <h1>মোঃ কামরুল হাসান</h1>
+      <p class="role"><span>ICT Teacher</span>কলেজ শাখা, লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</p>
+    </div>
+  </div>
+  <p class="intro">বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইলেকট্রিক্যাল অ্যান্ড ইলেকট্রনিক ইঞ্জিনিয়ারিংয়ে B.Sc. ও M.Sc. (Engg.)। M.Sc.-তে মেধাক্রমে প্রথম, থিন-ফিল্ম সোলার সেল নিয়ে গবেষণা আন্তর্জাতিক জার্নালে প্রকাশিত। ২০১২ সাল থেকে পড়াচ্ছি, বাংলা ও ইংলিশ দুই ভার্সনেই। কঠিন টপিক গোড়া থেকে সহজ ভাষায় বুঝিয়ে দেওয়াই আমার পড়ানোর ধরন।</p>
+  <div class="cta">
+    <a class="btn g" href="#notes">Download Notes</a>
+    <a class="btn wa" href="https://wa.me/8801521463182" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn o" href="#contact">Contact</a>
+  </div>
+  <div class="counters">
+    <div class="ct dk" style="--c:var(--amber)"><b><i data-count="teach">১৪</i>+</b><strong>বছর পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত</span></div>
+    <div class="ct" style="--c:var(--blue)"><b>২০২৫</b><strong>থেকে লায়ন্সে</strong><span id="lionsSpan">আইসিটি শিক্ষক, কলেজ শাখা</span></div>
+    <div class="ct" style="--c:var(--red)"><b>৩.৭১</b><strong>M.Sc. CGPA</strong><span>মেধাক্রম ১ম, ইইই</span></div>
+    <div class="ct" style="--c:var(--violet)"><b>২১.৮৩%</b><strong>Heliyon ২০২৩</strong><span>সোলার সেল গবেষণা</span></div>
+  </div>
+  <div class="jr">
+    <h2>My Journey</h2>
+    <p>স্কুল থেকে আজকের ক্লাসরুম পর্যন্ত পথটা এক লাইনে। যেকোনো স্টেশনে চাপো।</p>
+    <div class="fig" id="journey" aria-label="শিক্ষা ও কর্মজীবনের টাইমলাইন"><svg role="img"></svg></div>
+  </div>
+  <h2 class="htitle">Explore</h2>
+  <div class="tiles" id="tiles"></div>
+  <h2 class="htitle">Notes</h2>
+  <div id="homeNotes"></div>
+  <div class="cta"><a class="btn g" href="#notes">সব নোট দেখো</a></div>
+</div></header>
+
+<!-- EDUCATION -->
+<section class="band view tint" id="education" style="--c:var(--red)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>Education</h2><span class="rule"></span></div>
+  <p class="lead">শিক্ষাজীবনের প্রতিটি ধাপে সর্বোচ্চ সারির ফল: এসএসসি ও এইচএসসিতে GPA ৫.০০, বিশ্ববিদ্যালয়ে মেধাক্রমে ১ম ও ২য়।</p>
+  <div class="edsum">
+    <div><b>1st</b><span>M.Sc. (Engg.) মেধাক্রম</span></div>
+    <div><b>2nd</b><span>B.Sc. (Engg.) মেধাক্রম</span></div>
+    <div><b>5.00</b><span>HSC, বিজ্ঞান</span></div>
+    <div><b>5.00</b><span>SSC, বিজ্ঞান</span></div>
+  </div>
+
+  <article class="deg"><div class="y"><b>2019</b><span>Session 2017–2019</span></div><div class="body">
+    <span class="pill" style="--c:var(--red)">Postgraduate</span><span class="pill" style="--c:var(--violet)">Thesis Group</span>
+    <h3>M.Sc. (Engg.) in Electrical &amp; Electronic Engineering</h3>
+    <p class="sub">বেগম রোকেয়া বিশ্ববিদ্যালয়, রংপুর</p>
+    <dl class="facts">
+      <div><dt>বিভাগ</dt><dd>ইলেকট্রিক্যাল অ্যান্ড ইলেকট্রনিক ইঞ্জিনিয়ারিং</dd></div>
+      <div><dt>গ্রুপ</dt><dd>থিসিস (গবেষণা)</dd></div>
+      <div><dt>গবেষণাক্ষেত্র</dt><dd>থিন-ফিল্ম সোলার সেল</dd></div>
+      <div><dt>পাসের বছর</dt><dd>২০১৯</dd></div>
+    </dl>
+    <div class="res"><b>3.71</b><span>CGPA (৪.০০ এর মধ্যে) · মেধাক্রম ১ম</span></div>
+  </div></article>
+
+  <article class="deg"><div class="y s2"><b>2016</b><span>Session 2013–2016</span></div><div class="body">
+    <span class="pill" style="--c:var(--red)">Undergraduate</span>
+    <h3>B.Sc. (Engg.) in Electrical &amp; Electronic Engineering</h3>
+    <p class="sub">বেগম রোকেয়া বিশ্ববিদ্যালয়, রংপুর</p>
+    <dl class="facts">
+      <div><dt>বিভাগ</dt><dd>ইলেকট্রিক্যাল অ্যান্ড ইলেকট্রনিক ইঞ্জিনিয়ারিং</dd></div>
+      <div><dt>ডিগ্রি</dt><dd>৪ বছর মেয়াদি ইঞ্জিনিয়ারিং স্নাতক</dd></div>
+      <div><dt>পাসের বছর</dt><dd>২০১৬</dd></div>
+    </dl>
+    <div class="res"><b>3.60</b><span>CGPA (৪.০০ এর মধ্যে) · মেধাক্রম ২য়</span></div>
+  </div></article>
+
+  <article class="deg"><div class="y s2"><b>2012</b><span>Session 2010–2012</span></div><div class="body">
+    <span class="pill" style="--c:var(--red)">HSC</span>
+    <h3>Higher Secondary Certificate (HSC), Science</h3>
+    <p class="sub">সরকারি শাহ আব্দুর রউফ কলেজ, পীরগঞ্জ, রংপুর</p>
+    <dl class="facts">
+      <div><dt>গ্রুপ</dt><dd>বিজ্ঞান</dd></div>
+      <div><dt>বোর্ড</dt><dd>দিনাজপুর শিক্ষা বোর্ড</dd></div>
+      <div><dt>পাসের বছর</dt><dd>২০১২</dd></div>
+    </dl>
+    <div class="res"><b>5.00</b><span>GPA (৫.০০ এর মধ্যে)</span></div>
+  </div></article>
+
+  <article class="deg"><div class="y s2"><b>2010</b><span>Session 2005–2010</span></div><div class="body">
+    <span class="pill" style="--c:var(--red)">SSC</span>
+    <h3>Secondary School Certificate (SSC), Science</h3>
+    <p class="sub">পীরগঞ্জ সরকারি উচ্চ বিদ্যালয়, পীরগঞ্জ, রংপুর</p>
+    <dl class="facts">
+      <div><dt>গ্রুপ</dt><dd>বিজ্ঞান</dd></div>
+      <div><dt>বোর্ড</dt><dd>দিনাজপুর শিক্ষা বোর্ড</dd></div>
+      <div><dt>পাসের বছর</dt><dd>২০১০</dd></div>
+    </dl>
+    <div class="res"><b>5.00</b><span>GPA (৫.০০ এর মধ্যে)</span></div>
+  </div></article>
+
+  <div class="two">
+    <div class="box"><h3>Certification &amp; Training</h3><ul>
+      <li><b>Certified Web Developer</b>, NESCOM</li>
+      <li><b>Top-up IT Training (Web Development)</b>, Leveraging ICT for Growth, Employment and Governance (LICT) প্রকল্প</li>
+    </ul></div>
+    <div class="box"><h3>Language Skills</h3><ul>
+      <li><b>বাংলা:</b> বলা, লেখা ও শোনা, Excellent</li>
+      <li><b>English:</b> বলা, লেখা ও শোনা, Excellent</li>
+      <li><b>Hindi:</b> বলা ও শোনা, Excellent</li>
+    </ul></div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a><a class="nx" href="#research">Research ›</a></div>
+</div></section>
+
+<!-- RESEARCH -->
+<section class="band view tint" id="research" style="--c:var(--violet)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>Research &amp; Skills</h2><span class="rule"></span></div>
+  <p class="lead">M.Sc. থিসিসের সূত্রে সোলার সেল নিয়ে গবেষণা, আর ইঞ্জিনিয়ারিংয়ের সফটওয়্যারগুলোতে হাতে-কলমে কাজ।</p>
+  <article class="paper">
+    <div>
+      <span class="pill" style="--c:var(--violet)">Published Paper</span><span class="pill" style="--c:var(--ink)">Elsevier · Heliyon</span>
+      <h3>A Qualitative Design and Optimization of CIGS-Based Solar Cells with Sn<sub>2</sub>S<sub>3</sub> Back Surface Field: A Plan for Achieving 21.83% Efficiency</h3>
+      <div class="j">Heliyon 9(12): e22866, 2023 · দ্বিতীয় লেখক (Md Kamrul Hasan) · Advanced Energy Materials and Solar Cell Research Laboratory, EEE, বেরোবি</div>
+      <p><b>SCAPS-1D</b> সিমুলেটরে কম খরচের CIGS থিন-ফিল্ম সোলার সেলের নকশা ও অপটিমাইজেশন। ক্যাডমিয়ামমুক্ত বাফার আর সস্তা Sn<sub>2</sub>S<sub>3</sub> ব্যাক সারফেস ফিল্ড ব্যবহার করে সেলের দক্ষতা বাড়ানো হয়েছে।</p>
+      <a class="btn" href="https://doi.org/10.1016/j.heliyon.2023.e22866" target="_blank" rel="noopener">Read the Paper</a>
+    </div>
+    <div class="stackfig" id="stack" aria-label="সোলার সেলের স্তরবিন্যাস"><svg role="img"></svg></div>
+  </article>
+  <div class="skills">
+    <div class="sk"><h4>Simulation &amp; Research Software</h4><div class="tags"><span class="hot">SCAPS-1D</span><span class="hot">MATLAB</span><span class="hot">Proteus Design Suite</span><span class="hot">Origin</span><span>Mendeley</span></div></div>
+    <div class="sk"><h4>Digital Logic &amp; Hardware Design</h4><div class="tags"><span class="hot">VHDL</span><span class="hot">Verilog</span><span>DHCP2</span><span>8086 Assembly</span></div></div>
+    <div class="sk"><h4>Programming &amp; Web</h4><div class="tags"><span class="hot">Python</span><span class="hot">C</span><span class="hot">C++</span><span>Java</span><span>PHP</span><span>HTML</span><span>CSS</span><span>SQL</span></div></div>
+    <div class="sk"><h4>Office, Design &amp; Platforms</h4><div class="tags"><span>MS Office</span><span>Adobe Photoshop</span><span>Windows</span><span>Linux / Ubuntu</span></div></div>
+    <div class="sk"><h4>Research Interests</h4><div class="tags"><span>Thin-film Solar Cells</span><span>Renewable Energy</span><span>Functional Materials</span><span>Materials Characterization</span><span>Computational Physics</span><span>Optoelectronics</span></div></div>
+    <div class="sk"><h4>Personal Strengths</h4><div class="tags"><span>Presentation</span><span>Leadership</span><span>Teamwork</span><span>Planning</span><span>Effective Communication</span><span>Analytical Thinking</span></div></div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a><a class="nx" href="#experience">Experience ›</a></div>
+</div></section>
+
+<!-- EXPERIENCE -->
+<section class="band view tint" id="experience" style="--c:var(--amber)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>Experience</h2><span class="rule"></span></div>
+  <p class="lead">কলেজের ক্লাসরুম থেকে প্রাইভেট ব্যাচ, ভর্তি কোচিং আর চাকরির প্রস্তুতি: সব জায়গাতেই লক্ষ্য একটাই, না বুঝে মুখস্থ নয়।</p>
+  <div class="xp-top">
+    <div class="ct dk" style="--c:var(--amber)"><b><i data-count="teach">১৪</i>+ বছর</b><strong>পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত, টানা</span></div>
+    <div class="ct" style="--c:var(--blue)"><b>২০২৫ থেকে</b><strong>লায়ন্স স্কুল অ্যান্ড কলেজ</strong><span class="lionsYrs">আইসিটি শিক্ষক, কলেজ শাখা</span></div>
+    <div class="ct" style="--c:var(--pink)"><b>২ ভার্সন</b><strong>বাংলা ও ইংলিশ</strong><span>দুই মাধ্যমেই আইসিটি পড়াই</span></div>
+  </div>
+  <div class="xl">
+    <div class="xi" style="--c:var(--blue)"><span class="when">২০২৫ – বর্তমান</span>
+      <h3>ICT Teacher, College Section</h3><div class="org">লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</div>
+      <ul>
+        <li>একাদশ ও দ্বাদশ শ্রেণির তথ্য ও যোগাযোগ প্রযুক্তি পাঠদান</li>
+        <li>মানবিক বিভাগ, শাখা-ক এর শ্রেণিশিক্ষক</li>
+        <li>অধ্যায়ভিত্তিক নোট, সাজেশন, ক্লাস টেস্ট ও বোর্ড-মানের প্রশ্ন তৈরি</li>
+      </ul></div>
+    <div class="xi dk" style="--c:var(--amber)"><span class="when">২০১২ – বর্তমান</span>
+      <h3>Private Tutor, ICT</h3><div class="org">রংপুর · নিজের বাসা ও শিক্ষার্থীর বাসায় ব্যাচ</div>
+      <ul>
+        <li>HSC আইসিটি (একাদশ-দ্বাদশ) আর নবম-দশম আইসিটি</li>
+        <li>রংপুরের বিভিন্ন স্কুল-কলেজের শিক্ষার্থী পড়ে</li>
+        <li>নিয়মিত ক্লাস টেস্ট: সৃজনশীল + বহুনির্বাচনি, বোর্ড প্রশ্নের ধরনে</li>
+        <li>নিজের বানানো কনসেপ্ট নোট, কি-ওয়ার্ড বিশ্লেষণ আর ফাইনাল সাজেশন</li>
+      </ul></div>
+    <div class="xi" style="--c:var(--pink)"><span class="when">দীর্ঘ অভিজ্ঞতা</span>
+      <h3>English Version Teaching</h3><div class="org">ইংলিশ ভার্সনের শিক্ষার্থীদের আইসিটি</div>
+      <ul>
+        <li>ইংলিশ ভার্সনের শিক্ষার্থীদের পড়ানোর বিশাল অভিজ্ঞতা</li>
+        <li>ইংরেজি মাধ্যমের পাঠ্যবই অনুযায়ী আইসিটি পাঠদান</li>
+      </ul></div>
+    <div class="xi" style="--c:var(--red)"><span class="when">ভর্তি প্রস্তুতি</span>
+      <h3>Admission Coaching</h3><div class="org">বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি ব্যাচ</div>
+      <ul>
+        <li>বিশ্ববিদ্যালয় ভর্তি পরীক্ষার প্রস্তুতি ব্যাচে পাঠদান</li>
+      </ul></div>
+    <div class="xi" style="--c:var(--violet)"><span class="when">চাকরি প্রস্তুতি</span>
+      <h3>Government Job Preparation</h3><div class="org">বিসিএস, ব্যাংক ও প্রাথমিক নিয়োগ প্রার্থী</div>
+      <ul>
+        <li>সরকারি চাকরিপ্রার্থীদের প্রস্তুতিতে পাঠদান</li>
+        <li>নিজে বিসিএস, ব্যাংক ও প্রাথমিক নিয়োগের ধাপ পেরিয়েছি, তাই কৌশলটা হাতে-কলমে জানা</li>
+      </ul></div>
+  </div>
+  <h3 style="font-size:22px;font-weight:800;margin:10px 0 10px">Class Days</h3>
+  <div class="days">
+    <div>শনি · সোম · বুধ<span>প্রাইভেট ব্যাচ</span></div>
+    <div>রবি · মঙ্গল · বৃহস্পতি<span>প্রাইভেট ব্যাচ</span></div>
+    <div>ভর্তি<span>সিট খালি থাকলে WhatsApp-এ যোগাযোগ করো</span></div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a><a class="nx" href="#exams">BCS &amp; Exams ›</a></div>
+</div></section>
+
+<!-- EXAMS -->
+<section class="band view tint" id="exams" style="--c:var(--pink)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>BCS &amp; Exams</h2><span class="rule"></span></div>
+  <p class="lead">প্রতিযোগিতামূলক নিয়োগ পরীক্ষার অভিজ্ঞতা, যা চাকরিপ্রার্থীদের পড়ানোর সময় কাজে লাগে।</p>
+  <div class="exam">
+    <div class="ex"><div><h3>৪৪তম বিসিএস</h3><div class="s">সব ধাপ পেরিয়ে নন-ক্যাডার পদে উত্তীর্ণ</div></div><div class="stg"><span>Preliminary</span><span>Written</span><span>Viva</span><span class="end">Non-cadre</span></div></div>
+    <div class="ex"><div><h3>৪৬তম বিসিএস</h3><div class="s">প্রিলিমিনারি পেরিয়ে লিখিত পরীক্ষায় উত্তীর্ণ</div></div><div class="stg"><span>Preliminary</span><span>Written</span></div></div>
+    <div class="ex"><div><h3>ব্যাংক নিয়োগ পরীক্ষা</h3><div class="s">একাধিক ব্যাংকের নিয়োগ পরীক্ষায় তিন ধাপেই উত্তীর্ণ হওয়ার অভিজ্ঞতা</div></div><div class="stg"><span>Preliminary</span><span>Written</span><span>Viva</span></div></div>
+    <div class="ex"><div><h3>প্রাথমিক সহকারী শিক্ষক নিয়োগ</h3><div class="s">প্রাথমিক শিক্ষক নিয়োগ পরীক্ষায় উত্তীর্ণ</div></div><div class="stg"><span>Passed</span></div></div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a><a class="nx" href="#notes">Notes ›</a></div>
+</div></section>
+
+<!-- NOTES -->
+<section class="band view tint" id="notes" style="--c:var(--green)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>Notes Download</h2><span class="rule"></span></div>
+  <p class="lead">শিক্ষার্থীদের জন্য বিনামূল্যে। বিভাগ বেছে নাও বা নাম লিখে খোঁজো, তারপর Download চাপো।</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="নোট খোঁজো, যেমন: Chapter 3, Boolean" aria-label="নোট খোঁজো">
+    <div class="chips" id="chips"></div>
+  </div>
+  <div id="list"></div>
+  <div class="msg" id="msg" role="status"></div>
+  <div class="up" id="upload" hidden>
+    <h3>Teacher Panel: নোট আপলোড</h3>
+    <ol>
+      <li>নিচের <b>Upload Notes</b> বোতাম চাপুন। GitHub-এর আপলোড পাতা খুলবে (লগইন থাকতে হবে)।</li>
+      <li>PDF বেছে নিন, তারপর নিচে সবুজ <b>Commit changes</b> চাপুন।</li>
+      <li>এক-দুই মিনিট পর পাতা রিফ্রেশ দিলেই নোট এখানে দেখাবে।</li>
+    </ol>
+    <p style="margin:0 0 12px">ফাইলের নাম ইংরেজিতে, স্পেস ছাড়া দিন। নামের শুরুতেই বিভাগ: <code>hsc-ict-ch1-concept-note.pdf</code>, <code>class9-10-ict-ch5.pdf</code>, <code>english-version-ict-ch2.pdf</code>, <code>admission-…pdf</code>, <code>bcs-…pdf</code>। নাম থেকেই সুন্দর শিরোনাম তৈরি হবে।</p>
+    <div class="btns" id="upbtns"></div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a><a class="nx" href="#contact">Contact ›</a></div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="band view tint" id="contact" style="--c:var(--blue)"><div class="wrap">
+  <div class="sec-h"><span class="dot"></span><h2>Contact</h2><span class="rule"></span></div>
+  <p class="lead">ব্যাচে ভর্তি, নোট বা পড়াশোনা নিয়ে যেকোনো প্রশ্নে সবচেয়ে দ্রুত উত্তর পাবে WhatsApp-এ।</p>
+  <div class="contact">
+    <div class="cc" style="--c:var(--wa)"><b>WhatsApp</b><a class="v" href="https://wa.me/8801521463182" target="_blank" rel="noopener">+880 1521-463182</a><div class="btns"><a class="btn wa" href="https://wa.me/8801521463182" target="_blank" rel="noopener">Message on WhatsApp</a></div></div>
+    <div class="cc" style="--c:var(--amber)"><b>Mobile</b><a class="v" href="tel:+8801744790550">+880 1744-790550</a><div class="btns"><a class="btn" href="tel:+8801744790550">Call</a></div></div>
+    <div class="cc" style="--c:var(--violet)"><b>Email</b><a class="v" href="mailto:khsagor012@gmail.com">khsagor012@gmail.com</a><div class="btns"><a class="btn o" href="mailto:khsagor012@gmail.com">Send Email</a></div></div>
+    <div class="cc soc" data-soc="facebook" style="--c:#1877f2" hidden><b>Facebook</b><a class="v sl" href="#" target="_blank" rel="noopener"></a><div class="btns"><a class="btn sl" style="background:#1877f2" href="#" target="_blank" rel="noopener">Facebook প্রোফাইল</a></div></div>
+    <div class="cc soc" data-soc="instagram" style="--c:#dd2a7b" hidden><b>Instagram</b><a class="v sl" href="#" target="_blank" rel="noopener"></a><div class="btns"><a class="btn sl" style="background:#dd2a7b" href="#" target="_blank" rel="noopener">Instagram প্রোফাইল</a></div></div>
+    <div class="cc" style="--c:var(--blue)"><b>College</b>লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর<br>কলেজ শাখা</div>
+  </div>
+  <div class="pager"><a href="#home">‹ Home</a></div>
+</div></section>
+
+<footer><div class="wrap"><span>© <span id="yr">২০২৬</span> মোঃ কামরুল হাসান · লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</span><span>শিক্ষার্থীদের জন্য বিনামূল্যে নোট · <a href="#upload">Teacher Login</a></span></div></footer>
+<a class="wafloat" href="https://wa.me/8801521463182" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 2 2.2 4.2 4.6 5l1.4-1.3 2 1-.6 1.6c-3.5.6-8.1-3.6-8.1-7.2L10 8l1 2-1 1"/></svg><span>WhatsApp</span></a>
+<button class="totop" id="totop" aria-label="উপরে যাও">↑</button>
+
+<script>
+{
+/* ===== এখানে নিজের তথ্য বদলাতে পারবেন ===== */
+const SOCIAL = {facebook:'', instagram:''};   /* লিংক বসালে Contact-এ বোতাম দেখাবে */
+const NOTICE = '';                              /* উপরের সবুজ NEW বারের লেখা; খালি থাকলে লুকানো */
+const TEACH_SINCE = 2012, LIONS_SINCE = 2025;
+const CONFIG = {owner:'', repo:'', branch:'main'};
+/* ========================================== */
+
+const bn = n => String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const nowY = new Date().getFullYear();
+document.getElementById('yr').textContent = bn(nowY);
+
+/* counters */
+const teachYrs = nowY - TEACH_SINCE, lionsYrs = nowY - LIONS_SINCE;
+const lionsTxt = lionsYrs >= 2 ? `${bn(lionsYrs)} বছরের বেশি ধরে, কলেজ শাখা` : 'আইসিটি শিক্ষক, কলেজ শাখা';
+document.getElementById('lionsSpan').textContent = lionsTxt;
+document.querySelectorAll('.lionsYrs').forEach(e => e.textContent = lionsTxt);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-count=teach]').forEach(el => {
+  if (reduce) { el.textContent = bn(teachYrs); return; }
+  let i = 0; const t = setInterval(() => { i++; el.textContent = bn(i); if (i >= teachYrs) clearInterval(t); }, 55);
+});
+
+/* notice + socials */
+if (NOTICE) { document.getElementById('noticeText').textContent = NOTICE; document.getElementById('notice').hidden = false; }
+document.querySelectorAll('.soc').forEach(c => {
+  const u = SOCIAL[c.dataset.soc]; if (!u) return;
+  c.hidden = false;
+  c.querySelectorAll('.sl').forEach((a, i) => { a.href = u; if (!i) a.textContent = u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); });
+});
+
+/* tiles */
+const IC = {
+  education:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+  research:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
+  experience:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+  exams:'<path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
+  notes:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 12v6M9 15l3 3 3-3"/>',
+  contact:'<path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.4 8.4 0 1 1 21 11.5z"/>'
+};
+const tiles = [
+  ['education','Education','B.Sc. ও M.Sc. (Engg.), ইইই, বেরোবি','--red'],
+  ['research','Research & Skills','সোলার সেল গবেষণা, সফটওয়্যার','--violet'],
+  ['experience','Experience','২০১২ থেকে পড়ানো, বাংলা ও ইংলিশ ভার্সন','--amber'],
+  ['exams','BCS & Exams','৪৪তম নন-ক্যাডার, ৪৬তম লিখিত','--pink'],
+  ['notes','Notes Download','HSC, Class 9–10, English Version','--green'],
+  ['contact','Contact','WhatsApp, মোবাইল, ইমেইল','--blue']
+];
+document.getElementById('tiles').innerHTML = tiles.map(([k, t, d, c]) => `<a class="tile" href="#${k}" style="--c:var(${c})"><span class="ti"><svg viewBox="0 0 24 24">${IC[k]}</svg></span><span><b>${t.replace('&', '&amp;')}</b><em>${d}</em></span><span class="ar">›</span></a>`).join('');
+
+/* journey line */
+const stops = [
+  {y:'২০১০', t:'SSC', s:'GPA ৫.০০', c:'--red', h:'education'},
+  {y:'২০১২', t:'HSC · পড়ানো শুরু', s:'GPA ৫.০০', c:'--amber', h:'experience'},
+  {y:'২০১৬', t:'B.Sc. (Engg.)', s:'ইইই, মেধাক্রম ২য়', c:'--red', h:'education'},
+  {y:'২০১৯', t:'M.Sc. (Engg.)', s:'CGPA ৩.৭১, ১ম', c:'--red', h:'education'},
+  {y:'২০২৩', t:'Heliyon গবেষণা', s:'সোলার সেল', c:'--violet', h:'research'},
+  {y:'বিসিএস', t:'৪৪তম ও ৪৬তম', s:'নন-ক্যাডার, লিখিত', c:'--pink', h:'exams'},
+  {y:'২০২৫', t:'লায়ন্স স্কুল অ্যান্ড কলেজ', s:'আইসিটি শিক্ষক', c:'--blue', h:'experience'},
+  {y:'আজ', t:'১৪+ বছর শিক্ষকতা', s:'নোট ফ্রি ডাউনলোড', c:'--green', h:'notes'}
+];
+const jbox = document.getElementById('journey'), jsvg = jbox.querySelector('svg');
+const drawJourney = () => {
+  const W = jbox.clientWidth, H = jbox.clientHeight;
+  if (!W || !H) return;
+  const vert = W < 640, n = stops.length;
+  const pts = stops.map((s, i) => vert
+    ? [30, 26 + i * (H - 80) / (n - 1)]
+    : [80 + i * (W - 160) / (n - 1), H / 2 + (i % 2 ? -26 : 26)]);
+  let out = '';
+  for (let i = 0; i < n - 1; i++) {
+    const [x1, y1] = pts[i], [x2, y2] = pts[i + 1];
+    const d = vert ? `M${x1} ${y1}V${y2}` : `M${x1} ${y1}H${(x1 + x2) / 2 - 26}L${(x1 + x2) / 2 + 26} ${y2}H${x2}`;
+    out += `<path d="${d}" fill="none" stroke="${css(stops[i + 1].c)}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>`;
+  }
+  out += `<circle class="train" r="7" fill="${css('--ink')}"><animateMotion dur="12s" repeatCount="indefinite" path="M${pts.map(p => p.join(' ')).join('L')}"/></circle>`;
+  const fs = !vert && W < 1000 ? .86 : 1;
+  out += stops.map((s, i) => {
+    const [x, y] = pts[i];
+    let tx = x, ty, a = 'middle';
+    if (vert) { tx = x + 34; ty = y - 8; a = 'start'; }
+    else ty = i % 2 ? y - 72 : y + 42;
+    return `<a href="#${s.h}" aria-label="${s.t}"><circle cx="${x}" cy="${y}" r="14" fill="#fff" stroke="${css('--ink')}" stroke-width="5"/>
+      <text x="${tx}" y="${ty}" text-anchor="${a}" font-size="${15 * fs}" font-weight="800" fill="${css(s.c)}">${s.y}</text>
+      <text x="${tx}" y="${ty + 20 * fs}" text-anchor="${a}" font-size="${16 * fs}" font-weight="800" fill="${css('--ink')}">${s.t}</text>
+      <text x="${tx}" y="${ty + 38 * fs}" text-anchor="${a}" font-size="${13.5 * fs}" fill="${css('--mute')}">${s.s}</text></a>`;
+  }).join('');
+  jsvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  jsvg.innerHTML = out;
+};
+const jObs = new ResizeObserver(drawJourney);
+jObs.observe(jbox);
+
+/* solar cell stack */
+const sbox = document.getElementById('stack'), ssvg = sbox.querySelector('svg');
+const layers = [
+  {n:'Al', d:'সামনের কন্টাক্ট', h:.07, c:'#9aa3ad'},
+  {n:'FTO', d:'স্বচ্ছ পরিবাহী জানালা', h:.12, c:'#7fd3f0'},
+  {n:'ZnS:In', d:'বাফার, ক্যাডমিয়ামমুক্ত', h:.12, c:'#ffd166'},
+  {n:'CIGS', d:'শোষক স্তর, ০.৮ µm', h:.36, c:'#5b3a8c'},
+  {n:'Sn₂S₃', d:'BSF, ০.০৫ µm', h:.10, c:'#e0115f'},
+  {n:'Ni', d:'পেছনের কন্টাক্ট', h:.09, c:'#59606b'}
+];
+const drawStack = () => {
+  const W = sbox.clientWidth, H = sbox.clientHeight;
+  if (!W || !H) return;
+  const top = 58, bot = H - 14, bw = Math.min(W * .46, 230), x0 = 10, sk = 26;
+  const total = layers.reduce((a, l) => a + l.h, 0);
+  let y = top, out = '';
+  for (let i = 0; i < 4; i++) { const x = x0 + 30 + i * (bw / 4); out += `<line x1="${x - 10}" y1="6" x2="${x + 6}" y2="${top - 10}" stroke="#ffb400" stroke-width="4" stroke-linecap="round"/>`; }
+  out += `<text x="${x0 + bw + 20}" y="24" font-size="14" fill="${css('--mute')}">সূর্যের আলো</text>`;
+  layers.forEach((l, i) => {
+    const h = (bot - top) * l.h / total;
+    out += `<path d="M${x0} ${y + sk / 2}L${x0 + bw - sk} ${y + sk / 2}L${x0 + bw} ${y}L${x0 + bw} ${y + h}L${x0 + bw - sk} ${y + h + sk / 2}L${x0} ${y + h + sk / 2}Z" fill="${l.c}"/>`;
+    out += `<path d="M${x0 + bw - sk} ${y + sk / 2}L${x0 + bw} ${y}L${x0 + bw} ${y + h}L${x0 + bw - sk} ${y + h + sk / 2}Z" fill="#000" opacity=".22"/>`;
+    if (!i) out += `<path d="M${x0} ${y + sk / 2}L${x0 + sk} ${y}L${x0 + bw} ${y}L${x0 + bw - sk} ${y + sk / 2}Z" fill="#c8ced6"/>`;
+    const cy = y + sk / 2 + h / 2, lx = x0 + bw + 30, ly = top + 6 + i * (bot - top - 12) / (layers.length - 1);
+    out += `<path d="M${x0 + bw - sk / 2} ${cy}H${x0 + bw + 12}L${lx - 4} ${ly}H${lx}" fill="none" stroke="${css('--mute')}" stroke-width="1"/>`;
+    out += `<text x="${lx + 4}" y="${ly + 1}" font-size="15" font-weight="700" fill="${css('--ink')}">${l.n}</text><text x="${lx + 4}" y="${ly + 18}" font-size="13" fill="${css('--mute')}">${l.d}</text>`;
+    y += h;
+  });
+  ssvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  ssvg.innerHTML = out;
+};
+const sObs = new ResizeObserver(drawStack);
+sObs.observe(sbox);
+if (document.fonts) document.fonts.ready.then(() => { drawJourney(); drawStack(); });
+
+/* notes */
+const host = location.hostname;
+if (!CONFIG.owner && host.endsWith('.github.io')) {
+  CONFIG.owner = host.split('.')[0];
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  CONFIG.repo = seg && !seg.includes('.') ? seg : host;
+}
+const cats = [
+  {k:'hsc', name:'HSC ICT (একাদশ-দ্বাদশ)', short:'HSC'},
+  {k:'class9-10', name:'Class 9–10 ICT (নবম-দশম)', short:'Class 9–10'},
+  {k:'english-version', name:'ICT English Version', short:'English Version'},
+  {k:'admission', name:'Admission (ভর্তি প্রস্তুতি)', short:'Admission'},
+  {k:'job', name:'Job Preparation (বিসিএস, ব্যাংক, প্রাথমিক)', short:'Job Prep'}
+];
+const exts = /\.(pdf|docx?|pptx?|xlsx?|zip)$/i;
+const guess = n => /english|ইংলিশ/i.test(n) ? 'english-version'
+  : /ভর্তি|admission/i.test(n) ? 'admission'
+  : /বিসিএস|bcs|ব্যাংক|bank|চাকরি|job|প্রাথমিক|primary/i.test(n) ? 'job'
+  : /নবম|দশম|9-10|class ?(9|10)/i.test(n) ? 'class9-10' : 'hsc';
+const UP = {hsc:'HSC', ict:'ICT', bcs:'BCS', cq:'CQ', mcq:'MCQ', pdf:'PDF'};
+const pretty = n => {
+  let t = n.replace(exts, '').replace(/class[-_ ]?(\d+)[-_](\d+)/i, 'Class $1–$2').replace(/\bch(?:apter)?[-_ ]?(\d+)/ig, 'Chapter $1');
+  t = t.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return t.split(' ').map(w => UP[w.toLowerCase()] || (/^[a-z]/.test(w) ? w[0].toUpperCase() + w.slice(1) : w)).join(' ');
+};
+let notes = [], filter = 'all', q = '';
+const list = document.getElementById('list'), msg = document.getElementById('msg'), chips = document.getElementById('chips');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+chips.innerHTML = [{k:'all', short:'All'}].concat(cats).map(c => `<button class="chip" data-f="${c.k}" aria-pressed="${c.k === 'all'}">${c.short}</button>`).join('');
+const kb = n => n ? (n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB') : '';
+const card = n => {
+  const ext = (n.file.split('.').pop() || '').toUpperCase().slice(0, 4);
+  const cat = cats.find(c => c.k === n.cat);
+  return `<div class="file"><span class="ic">${esc(ext)}</span><div><h4>${esc(n.title)}</h4>
+    <div class="meta">${esc(cat ? cat.short : '')}${n.size ? ' · ' + esc(kb(n.size)) : ''}</div>
+    <div class="btns"><a class="btn g dl" href="${esc(n.file)}" download="${esc(decodeURIComponent(n.file.split('/').pop()))}">Download</a><a class="btn o" href="${esc(n.file)}" target="_blank" rel="noopener">Open</a></div></div></div>`;
+};
+const render = () => {
+  const ql = q.trim().toLowerCase();
+  list.innerHTML = cats.filter(c => filter === 'all' || filter === c.k).map(c => {
+    const items = notes.filter(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)));
+    const body = items.length ? `<div class="files">${items.map(card).join('')}</div>`
+      : `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'এই বিভাগে এখনো নোট যোগ হয়নি। নতুন নোট এলে এখানেই পাবে।'}</div>`;
+    return `<div class="cat"><h3>${c.name}</h3>${body}</div>`;
+  }).join('');
+  const hn = document.getElementById('homeNotes');
+  hn.innerHTML = notes.length ? `<div class="files">${notes.slice(0, 4).map(card).join('')}</div>` : '<div class="empty">নোট শিগগিরই যোগ হচ্ছে। Notes পাতায় বিভাগ অনুযায়ী সব পাবে।</div>';
+};
+render();
+const fromGitHub = () => fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => (d.tree || []).filter(t => t.type === 'blob' && exts.test(t.path)).map(t => {
+    const parts = t.path.split('/'), name = parts[parts.length - 1];
+    const folder = parts[0] === 'notes' && cats.some(c => c.k === parts[1]) ? parts[1] : '';
+    return {cat: folder || guess(name), file: parts.map(encodeURIComponent).join('/'), size: t.size, title: pretty(name)};
+  }).sort((a, b) => a.title.localeCompare(b.title, 'en', {numeric:true})));
+const fromJson = () => fetch('notes.json').then(r => r.ok ? r.json() : []).then(d => Array.isArray(d) ? d : []);
+(CONFIG.owner ? fromGitHub().catch(fromJson) : fromJson()).then(d => { notes = d; render(); }).catch(() => render());
+document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
+chips.addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  filter = b.dataset.f;
+  chips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
+  render();
+});
+document.getElementById('upbtns').innerHTML = CONFIG.owner
+  ? `<a class="btn g" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}/upload/${CONFIG.branch}" target="_blank" rel="noopener">Upload Notes</a><a class="btn o" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}" target="_blank" rel="noopener">GitHub-এ ফাইলগুলো দেখুন</a>`
+  : '<span class="empty">GitHub Pages-এ সাইট খুললে এখানে Upload Notes বোতাম দেখাবে।</span>';
+
+/* claude.ai preview: use the downloads capability */
+document.addEventListener('click', async e => {
+  const b = e.target.closest('.dl');
+  if (!b || !window.claude?.use) return;
+  e.preventDefault();
+  msg.textContent = 'ফাইল আনা হচ্ছে…';
+  try {
+    const dl = await window.claude.use('downloads');
+    if (!dl) throw new Error('none');
+    const blob = await (await fetch(b.getAttribute('href'))).blob();
+    await dl.save({filename: b.getAttribute('download'), data: blob});
+    msg.textContent = 'ডাউনলোড শুরু হয়েছে।';
+  } catch (err) { msg.textContent = 'সরাসরি ডাউনলোড না হলে Open চেপে সেখান থেকে সেভ করো।'; }
+});
+
+/* pages */
+const views = [...document.querySelectorAll('.view')];
+const navLinks = [...document.querySelectorAll('#links a')];
+const linksBox = document.getElementById('links'), menuBtn = document.getElementById('menuBtn');
+const alias = {work:'experience', private:'experience', upload:'notes', top:'home'};
+const up = document.getElementById('upload');
+const route = () => {
+  const h = location.hash.slice(1);
+  const k = alias[h] || h;
+  const id = views.some(v => v.id === k) ? k : 'home';
+  views.forEach(v => { v.hidden = v.id !== id; });
+  navLinks.forEach(a => a.getAttribute('href') === '#' + id ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  up.hidden = h !== 'upload';
+  linksBox.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false');
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => { drawJourney(); drawStack(); });
+};
+addEventListener('hashchange', route);
+route();
+menuBtn.addEventListener('click', () => { const o = linksBox.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o); });
+const tt = document.getElementById('totop');
+addEventListener('scroll', () => tt.classList.toggle('on', scrollY > 600), {passive:true});
+tt.addEventListener('click', () => window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}));
+}
+</script>
+</body>
+</html>
