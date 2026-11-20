@@ -184,6 +184,7 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .cbtn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .sample{font-size:13px;color:var(--mute);margin:6px 0 0}
 @media(max-width:700px){.how{grid-template-columns:minmax(0,1fr)}}
+.chh{font:800 17px "Anek Bangla",sans-serif;margin:16px 0 10px;padding-left:12px;border-left:5px solid var(--green)}
 .empty{color:var(--mute);background:#fff;border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
 .msg{min-height:1.5em;color:var(--mute);font-size:14.5px;margin-top:12px}
 .up{margin-top:30px;border:2px dashed var(--green);border-radius:18px;padding:20px;background:#fff}
@@ -644,7 +645,12 @@ const render = () => {
   if (!shown.length) { list.innerHTML = `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'নোট শিগগিরই যোগ হচ্ছে। দরকারি নোটের জন্য WhatsApp-এ জানাও।'}</div>`; }
   else list.innerHTML = shown.map(c => {
     const items = notes.filter(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)));
-    const body = items.length ? `<div class="files">${items.map(card).join('')}</div>`
+    const chOf = n => { const m = n.title.match(/Chapter (\d+)/i); return m ? +m[1] : 0; };
+    const groups = [...new Set(items.map(chOf))].sort((x, y) => (x || 99) - (y || 99));
+    const grouped = groups.length > 1 || groups[0] > 0
+      ? groups.map(g => `<h4 class="chh">${g ? `Chapter ${g} · অধ্যায় ${bn(g)}` : 'অন্যান্য'}</h4><div class="files">${items.filter(n => chOf(n) === g).map(card).join('')}</div>`).join('')
+      : `<div class="files">${items.map(card).join('')}</div>`;
+    const body = items.length ? grouped
       : `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'এই বিভাগে এখনো নোট যোগ হয়নি। নতুন নোট এলে এখানেই পাবে। দরকারি নোটের জন্য WhatsApp-এ জানাও।'}</div>`;
     return `<div class="cat"><h3>${c.name}</h3>${body}</div>`;
   }).join('');
