@@ -188,10 +188,6 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .tagline mark{background:linear-gradient(transparent 55%,var(--amber) 55%);color:inherit;padding:0 2px}
 .sig{font:800 clamp(19px,2.2vw,26px)/1.3 "Anek Bangla",sans-serif;margin:14px 0 0;max-width:40ch}
 .sig em{font-style:normal;color:var(--blue)}
-.route{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:12px}
-.route span{position:relative;font:700 14.5px "Anek Bangla",sans-serif;background:var(--c,var(--ink));color:#fff;padding:5px 14px 5px 22px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%,10px 50%);margin-right:-4px}
-.route span:first-child{padding-left:14px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
-.route span:nth-child(1){--c:var(--red)}.route span:nth-child(2){--c:var(--blue)}.route span:nth-child(3){--c:var(--green)}.route span:nth-child(4){--c:var(--violet)}
 .topics{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
 .topics span{font:700 15px "Anek Bangla",sans-serif;color:var(--mute);margin-right:4px}
 .topics b{font:700 15px "Anek Bangla",sans-serif;border:2px solid var(--ink);border-radius:99px;padding:3px 14px;background:#fff}
@@ -224,6 +220,27 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 @media(max-width:1000px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skillbar{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.lgrid{grid-template-columns:minmax(0,1fr)}}
 .nick{color:var(--blue)}
+.path{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;max-width:640px;position:relative}
+.path::before{content:"";position:absolute;left:12%;right:12%;top:17px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--red),var(--blue),var(--green),var(--violet))}
+.path li{position:relative;text-align:center;padding:0 4px}
+.path i{display:grid;place-items:center;width:38px;height:38px;margin:0 auto 6px;border-radius:50%;background:#fff;border:4px solid var(--c);font:800 17px "Anek Bangla",sans-serif;font-style:normal;color:var(--c)}
+.path b{display:block;font:800 18px/1.2 "Anek Bangla",sans-serif;color:var(--c)}
+.path span{display:block;font-size:13px;color:var(--mute);line-height:1.35}
+.acc{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+details.lc{padding:0;border-top:0;border-left:7px solid var(--c);overflow:hidden}
+details.lc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:4px 12px;align-items:center;padding:14px 16px;min-height:64px}
+details.lc summary::-webkit-details-marker{display:none}
+details.lc summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+details.lc summary h3{margin:0;font-size:18px}
+details.lc summary small{font-size:13.5px;color:var(--mute);white-space:nowrap}
+.pm{width:30px;height:30px;border-radius:50%;background:var(--c);position:relative}
+.pm::before,.pm::after{content:"";position:absolute;left:8px;right:8px;top:13.5px;height:3px;border-radius:2px;background:#fff}
+.pm::after{transform:rotate(90deg);transition:transform .2s}
+details[open] .pm::after{transform:rotate(0)}
+.lb{padding:0 16px 16px}
+.lb p{margin:0 0 12px;color:var(--ink);font-size:15.5px;border-top:1px solid var(--line);padding-top:12px}
+@media(max-width:800px){.acc{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.path b{font-size:16px}.path span{font-size:12px}details.lc summary{grid-template-columns:auto minmax(0,1fr) auto}details.lc summary small{display:none}}
 .feat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
 .feat div{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;border-top:5px solid var(--c)}
 .feat span{font:800 14px "Anek Bangla",sans-serif;color:var(--c)}
@@ -298,10 +315,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <h1>মোঃ কামরুল হাসান <span class="nick">সাগর</span></h1>
       <p class="role"><span>ICT Teacher</span>কলেজ শাখা, লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</p>
       <p class="sig">বইয়ের আইসিটি থেকে বাস্তবের প্রযুক্তি: <em>বুঝে শিখি, বানিয়ে দেখি।</em></p>
-      <div class="route"><span>সহজে বোঝা</span><span>ছোট প্রজেক্ট</span><span>হাতে-কলমে শেখা</span><span>অ্যাডভান্সড লেভেল</span></div>
+      <ol class="path">
+        <li style="--c:var(--red)"><i>১</i><b>বুঝি</b><span>ধারণা সহজ করে</span></li>
+        <li style="--c:var(--blue)"><i>২</i><b>বানাই</b><span>ছোট ছোট প্রজেক্ট</span></li>
+        <li style="--c:var(--green)"><i>৩</i><b>শিখি</b><span>হাতে ধরে, হাতে-কলমে</span></li>
+        <li style="--c:var(--violet)"><i>৪</i><b>এগোই</b><span>চাইলে অ্যাডভান্সড</span></li>
+      </ol>
     </div>
   </div>
-  <p class="intro">একজন ইঞ্জিনিয়ারের চোখে আইসিটি, শিক্ষকের সহজ ভাষায়। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আন্তর্জাতিক জার্নালে প্রকাশিত গবেষণা, আর <b>২০১২ থেকে টানা ১৪ বছরের বেশি</b> পড়ানোর অভিজ্ঞতা। কোডিং থেকে এআই, আজকের ট্রেন্ডিং প্রযুক্তিগুলো এখানে শেখানো হয় বাস্তব উদাহরণ দিয়ে, একদম সহজ করে।</p>
+  <p class="intro">পড়াশোনায় ইঞ্জিনিয়ার, পেশায় আইসিটি শিক্ষক। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আর Elsevier-এর <b>Heliyon</b> জার্নালে প্রকাশিত সোলার সেল গবেষণার সহ-লেখক। <b>২০১২ সাল থেকে</b> শিক্ষার্থীদের সাথে আছি। আমার ক্লাসের লক্ষ্য দুটো: পরীক্ষায় ভালো ফল, আর প্রযুক্তিটা সত্যিই বোঝা, যাতে আগামীর AI, কোডিং আর ডেটার দুনিয়ার জন্য নিজেকে তৈরি করা যায়।</p>
   <div class="feat">
     <div style="--c:var(--blue)"><span>০১</span><b>ধারণা আগে, মুখস্থ পরে</b><p>ছবি, ডায়াগ্রাম আর বাস্তব উদাহরণে প্রতিটা টপিক পরিষ্কার।</p></div>
     <div style="--c:var(--green)"><span>০২</span><b>নিজে কোড লিখে দেখা</b><p>HTML, Python আর SQL ক্লাসেই লিখে চালিয়ে দেখা।</p></div>
@@ -324,13 +346,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
   <section class="learn" aria-label="সহজ করে যা শেখাই">
     <div class="lh"><h2>সহজ করে যা শেখাই</h2><p>HSC ICT বই (২০২৬-২০২৭ শিক্ষাবর্ষ), বইয়ের ক্রম অনুযায়ী টপিক</p></div>
-    <div class="lgrid">
-      <div class="lc" style="--c:var(--violet)"><span class="ch">অধ্যায় ১</span><h3>ICT: World &amp; Bangladesh Perspective</h3><div class="tg"><i><em>১</em>বিশ্বগ্রাম</i><b><em>২</em>Virtual Reality</b><i><em>৩</em>Augmented Reality</i><b><em>৪</em>Artificial Intelligence</b><b><em>৫</em>Neural Network ও Deep Learning</b><i><em>৬</em>AI Model</i><b><em>৭</em>Robotics</b><i><em>৮</em>IoT</i><i><em>৯</em>Big Data</i><i><em>১০</em>Software Engineering</i><i><em>১১</em>মহাকাশ অভিযান</i><i><em>১২</em>প্রতিরক্ষা ও Drone</i><i><em>১৩</em>Biometrics</i><i><em>১৪</em>Bioinformatics</i><i><em>১৫</em>Genetic Engineering</i><b><em>১৬</em>Nanotechnology</b><i><em>১৭</em>ICT ব্যবহারে নৈতিকতা</i><b><em>১৮</em>Hacking ও Ethical Hacking</b><i><em>১৯</em>সামাজিক জীবনে ICT</i><i><em>২০</em>ICT ও অর্থনৈতিক উন্নয়ন</i></div></div>
-      <div class="lc" style="--c:var(--blue)"><span class="ch">অধ্যায় ২</span><h3>Communication Systems &amp; Networking</h3><div class="tg"><i><em>১</em>কমিউনিকেশন সিস্টেম</i><b><em>২</em>Data Communication</b><i><em>৩</em>Bandwidth</i><i><em>৪</em>Transmission Method ও Mode</i><i><em>৫</em>Unicast, Broadcast, Multicast</i><i><em>৬</em>Wired Media (Twisted Pair, Coaxial, Fiber)</i><i><em>৭</em>Wireless Media ও Satellite</i><i><em>৮</em>Bluetooth, Wi-Fi, WiMAX</i><i><em>৯</em>Mobile Network (1G–5G)</i><b><em>১০</em>Computer Networking</b><i><em>১১</em>Network Devices</i><i><em>১২</em>Network Topology</i><i><em>১৩</em>OSI Model</i><i><em>১৪</em>Cloud Computing</i></div></div>
-      <div class="lc" style="--c:var(--red)"><span class="ch">অধ্যায় ৩</span><h3>Number System &amp; Digital Devices</h3><div class="tg"><i><em>১</em>Number System</i><i><em>২</em>সংখ্যা রূপান্তর</i><i><em>৩</em>Binary যোগ-বিয়োগ</i><i><em>৪</em>Signed Number</i><i><em>৫</em>Code (ASCII, Unicode)</i><i><em>৬</em>Boolean Algebra</i><i><em>৭</em>De Morgan ও Truth Table</i><i><em>৮</em>Logic Gate</i><i><em>৯</em>Universal Gate</i><i><em>১০</em>XOR, XNOR</i><b><em>১১</em>Digital Devices</b><i><em>১২</em>Encoder, Decoder</i><i><em>১৩</em>Adder</i><i><em>১৪</em>Flip-Flop, Register, Counter</i></div></div>
-      <div class="lc" style="--c:var(--pink)"><span class="ch">অধ্যায় ৪</span><h3>Web Design &amp; HTML</h3><div class="tg"><i><em>১</em>Web Design ধারণা</i><i><em>২</em>IP, DNS, HTTP</i><i><em>৩</em>Website Structure</i><b><em>৪</em>HTML</b><i><em>৫</em>Heading ও Text Formatting</i><i><em>৬</em>List, Link, Image</i><i><em>৭</em>Table</i><b><em>৮</em>CSS</b><i><em>৯</em>Front-end ও Back-end</i><i><em>১০</em>Website Publishing</i></div></div>
-      <div class="lc" style="--c:var(--green)"><span class="ch">অধ্যায় ৫</span><h3>Programming Language</h3><div class="tg"><i><em>১</em>Programming ধারণা</i><i><em>২</em>Language-এর প্রজন্ম</i><i><em>৩</em>Compiler ও Interpreter</i><i><em>৪</em>Structured, Modular, OOP</i><i><em>৫</em>Computational Thinking</i><i><em>৬</em>Algorithm ও Flowchart</i><i><em>৭</em>Pseudocode ও Dry Run</i><b><em>৮</em>Python</b><i><em>৯</em>Variable, Data Type, Operator</i><i><em>১০</em>Conditional Logic</i><i><em>১১</em>Loop ও Nested Loop</i><b><em>১২</em>Data Structure (List, Tuple, Dictionary, Set)</b><i><em>১৩</em>Function</i><i><em>১৪</em>File Handling</i><i><em>১৫</em>ছোট ছোট প্রজেক্ট</i></div></div>
-      <div class="lc" style="--c:var(--ink)"><span class="ch">অধ্যায় ৬</span><h3>Database Management System</h3><div class="tg"><i><em>১</em>Database ধারণা</i><b><em>২</em>DBMS</b><i><em>৩</em>Relational Database</i><b><em>৪</em>SQL</b><i><em>৫</em>Primary ও Foreign Key</i><i><em>৬</em>Data Integrity ও Relation</i><i><em>৭</em>Database ও Table তৈরি</i><i><em>৮</em>SELECT, INSERT, UPDATE, DELETE</i><i><em>৯</em>সরকারি ও কর্পোরেট Database</i><i><em>১০</em>Data Security ও Encryption</i></div></div>
+    <div class="acc">
+      <details class="lc" style="--c:var(--violet)"><summary><span class="ch">অধ্যায় ১</span><h3>ICT: World &amp; Bangladesh Perspective</h3><small>২০টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>বিশ্বগ্রাম থেকে AI, রোবটিক্স আর ন্যানোটেকনোলজি: আধুনিক প্রযুক্তি কীভাবে আমাদের জীবন বদলে দিচ্ছে।</p><div class="tg"><b><em>১</em>বিশ্বগ্রাম</b><i><em>২</em>Virtual Reality</i><b><em>৩</em>Augmented Reality</b><i><em>৪</em>Artificial Intelligence</i><b><em>৫</em>Neural Network ও Deep Learning</b><i><em>৬</em>AI Model</i><b><em>৭</em>Robotics</b><i><em>৮</em>IoT</i><b><em>৯</em>Big Data</b><i><em>১০</em>Software Engineering</i><b><em>১১</em>মহাকাশ অভিযান</b><i><em>১২</em>প্রতিরক্ষা ও Drone</i><b><em>১৩</em>Biometrics</b><i><em>১৪</em>Bioinformatics</i><b><em>১৫</em>Genetic Engineering</b><i><em>১৬</em>Nanotechnology</i><b><em>১৭</em>ICT ব্যবহারে নৈতিকতা</b><i><em>১৮</em>Hacking ও Ethical Hacking</i><b><em>১৯</em>সামাজিক জীবনে ICT</b><i><em>২০</em>ICT ও অর্থনৈতিক উন্নয়ন</i></div></div></details>
+      <details class="lc" style="--c:var(--blue)"><summary><span class="ch">অধ্যায় ২</span><h3>Communication Systems &amp; Networking</h3><small>১৪টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>তথ্য কীভাবে এক জায়গা থেকে আরেক জায়গায় যায়, আর নেটওয়ার্ক কীভাবে পুরো পৃথিবীকে জুড়ে রাখে।</p><div class="tg"><b><em>১</em>কমিউনিকেশন সিস্টেম</b><i><em>২</em>Data Communication</i><b><em>৩</em>Bandwidth</b><i><em>৪</em>Transmission Method ও Mode</i><b><em>৫</em>Unicast, Broadcast, Multicast</b><i><em>৬</em>Wired Media (Twisted Pair, Coaxial, Fiber)</i><b><em>৭</em>Wireless Media ও Satellite</b><i><em>৮</em>Bluetooth, Wi-Fi, WiMAX</i><b><em>৯</em>Mobile Network (1G–5G)</b><i><em>১০</em>Computer Networking</i><b><em>১১</em>Network Devices</b><i><em>১২</em>Network Topology</i><b><em>১৩</em>OSI Model</b><i><em>১৪</em>Cloud Computing</i></div></div></details>
+      <details class="lc" style="--c:var(--red)"><summary><span class="ch">অধ্যায় ৩</span><h3>Number System &amp; Digital Devices</h3><small>১৪টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>কম্পিউটারের ভাষা বাইনারি, আর লজিক গেট দিয়ে কীভাবে ডিজিটাল যন্ত্র তৈরি হয়।</p><div class="tg"><b><em>১</em>Number System</b><i><em>২</em>সংখ্যা রূপান্তর</i><b><em>৩</em>Binary যোগ-বিয়োগ</b><i><em>৪</em>Signed Number</i><b><em>৫</em>Code (ASCII, Unicode)</b><i><em>৬</em>Boolean Algebra</i><b><em>৭</em>De Morgan ও Truth Table</b><i><em>৮</em>Logic Gate</i><b><em>৯</em>Universal Gate</b><i><em>১০</em>XOR, XNOR</i><b><em>১১</em>Digital Devices</b><i><em>১২</em>Encoder, Decoder</i><b><em>১৩</em>Adder</b><i><em>১৪</em>Flip-Flop, Register, Counter</i></div></div></details>
+      <details class="lc" style="--c:var(--pink)"><summary><span class="ch">অধ্যায় ৪</span><h3>Web Design &amp; HTML</h3><small>১০টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>HTML দিয়ে নিজের ওয়েবপেজ বানানো, প্রথম ট্যাগ থেকে ওয়েবসাইট পাবলিশ পর্যন্ত।</p><div class="tg"><b><em>১</em>Web Design ধারণা</b><i><em>২</em>IP, DNS, HTTP</i><b><em>৩</em>Website Structure</b><i><em>৪</em>HTML</i><b><em>৫</em>Heading ও Text Formatting</b><i><em>৬</em>List, Link, Image</i><b><em>৭</em>Table</b><i><em>৮</em>CSS</i><b><em>৯</em>Front-end ও Back-end</b><i><em>১০</em>Website Publishing</i></div></div></details>
+      <details class="lc" style="--c:var(--green)"><summary><span class="ch">অধ্যায় ৫</span><h3>Programming Language</h3><small>১৫টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>Python দিয়ে সমস্যা সমাধান: অ্যালগরিদম আর ফ্লোচার্ট থেকে আসল প্রোগ্রাম।</p><div class="tg"><b><em>১</em>Programming ধারণা</b><i><em>২</em>Language-এর প্রজন্ম</i><b><em>৩</em>Compiler ও Interpreter</b><i><em>৪</em>Structured, Modular, OOP</i><b><em>৫</em>Computational Thinking</b><i><em>৬</em>Algorithm ও Flowchart</i><b><em>৭</em>Pseudocode ও Dry Run</b><i><em>৮</em>Python</i><b><em>৯</em>Variable, Data Type, Operator</b><i><em>১০</em>Conditional Logic</i><b><em>১১</em>Loop ও Nested Loop</b><i><em>১২</em>Data Structure (List, Tuple, Dictionary, Set)</i><b><em>১৩</em>Function</b><i><em>১৪</em>File Handling</i><b><em>১৫</em>ছোট ছোট প্রজেক্ট</b></div></div></details>
+      <details class="lc" style="--c:var(--ink)"><summary><span class="ch">অধ্যায় ৬</span><h3>Database Management System</h3><small>১০টি টপিক</small><span class="pm" aria-hidden="true"></span></summary><div class="lb"><p>ডেটা গুছিয়ে রাখা আর SQL দিয়ে দরকারি তথ্য মুহূর্তে খুঁজে বের করা।</p><div class="tg"><b><em>১</em>Database ধারণা</b><i><em>২</em>DBMS</i><b><em>৩</em>Relational Database</b><i><em>৪</em>SQL</i><b><em>৫</em>Primary ও Foreign Key</b><i><em>৬</em>Data Integrity ও Relation</i><b><em>৭</em>Database ও Table তৈরি</b><i><em>৮</em>SELECT, INSERT, UPDATE, DELETE</i><b><em>৯</em>সরকারি ও কর্পোরেট Database</b><i><em>১০</em>Data Security ও Encryption</i></div></div></details>
     </div>
   </section>
   <section class="skillbar" aria-label="সফটওয়্যার ও প্রোগ্রামিং দক্ষতা">
