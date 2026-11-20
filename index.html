@@ -186,6 +186,11 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 @media(max-width:700px){.how{grid-template-columns:minmax(0,1fr)}}
 .tagline{font:800 clamp(22px,2.8vw,32px)/1.25 "Anek Bangla",sans-serif;margin:22px 0 0;max-width:30ch}
 .tagline mark{background:linear-gradient(transparent 55%,var(--amber) 55%);color:inherit;padding:0 2px}
+.sig{font:800 clamp(18px,2vw,23px)/1.35 "Anek Bangla",sans-serif;margin:14px 0 0;padding:8px 0 8px 14px;border-left:6px solid var(--amber);max-width:44ch}
+.route{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:12px}
+.route span{position:relative;font:700 14.5px "Anek Bangla",sans-serif;background:var(--c,var(--ink));color:#fff;padding:5px 14px 5px 22px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%,10px 50%);margin-right:-4px}
+.route span:first-child{padding-left:14px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+.route span:nth-child(1){--c:var(--red)}.route span:nth-child(2){--c:var(--amber);color:var(--ink)}.route span:nth-child(3){--c:var(--green)}.route span:nth-child(4){--c:var(--violet)}
 .topics{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
 .topics span{font:700 15px "Anek Bangla",sans-serif;color:var(--mute);margin-right:4px}
 .topics b{font:700 15px "Anek Bangla",sans-serif;border:2px solid var(--ink);border-radius:99px;padding:3px 14px;background:#fff}
@@ -256,6 +261,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div>
       <h1>মোঃ কামরুল হাসান</h1>
       <p class="role"><span>ICT Teacher</span>কলেজ শাখা, লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</p>
+      <p class="sig">আইসিটি সহজে বোঝাই, ছোট ছোট প্রজেক্টে হাতে ধরে শেখাই, আর কেউ চাইলে নিয়ে যাই অ্যাডভান্সড লেভেলে।</p>
+      <div class="route"><span>সহজে বোঝা</span><span>ছোট প্রজেক্ট</span><span>হাতে-কলমে শেখা</span><span>অ্যাডভান্সড লেভেল</span></div>
     </div>
   </div>
   <p class="tagline">আইসিটি মুখস্থের বিষয় না, <mark>বুঝে ফেলার</mark> বিষয়।</p>
@@ -391,7 +398,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="skills">
     <div class="sk"><h4>Simulation &amp; Research Software</h4><div class="tags"><span class="hot">SCAPS-1D</span><span class="hot">MATLAB</span><span class="hot">Proteus Design Suite</span><span class="hot">Origin</span><span>Mendeley</span></div></div>
     <div class="sk"><h4>Digital Logic &amp; Hardware Design</h4><div class="tags"><span class="hot">VHDL</span><span class="hot">Verilog</span><span>DHCP2</span><span>8086 Assembly</span></div></div>
-    <div class="sk"><h4>Programming &amp; Web</h4><div class="tags"><span class="hot">Python</span><span class="hot">C</span><span class="hot">C++</span><span>Java</span><span>PHP</span><span>HTML</span><span>CSS</span><span>SQL</span></div></div>
+    <div class="sk"><h4>Programming &amp; Web</h4><div class="tags"><span class="hot">Python</span><span class="hot">C</span><span>Java</span><span>PHP</span><span>HTML</span><span>CSS</span><span>SQL</span></div></div>
     <div class="sk"><h4>Office, Design &amp; Platforms</h4><div class="tags"><span>MS Office</span><span>Adobe Photoshop</span><span>Windows</span><span>Linux / Ubuntu</span></div></div>
     <div class="sk"><h4>Research Interests</h4><div class="tags"><span>Thin-film Solar Cells</span><span>Renewable Energy</span><span>Functional Materials</span><span>Materials Characterization</span><span>Computational Physics</span><span>Optoelectronics</span></div></div>
     <div class="sk"><h4>Personal Strengths</h4><div class="tags"><span>Presentation</span><span>Leadership</span><span>Teamwork</span><span>Planning</span><span>Effective Communication</span><span>Analytical Thinking</span></div></div>
