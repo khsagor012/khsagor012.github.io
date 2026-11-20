@@ -186,6 +186,11 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 @media(max-width:700px){.how{grid-template-columns:minmax(0,1fr)}}
 .tagline{font:800 clamp(22px,2.8vw,32px)/1.25 "Anek Bangla",sans-serif;margin:22px 0 0;max-width:30ch}
 .tagline mark{background:linear-gradient(transparent 55%,var(--amber) 55%);color:inherit;padding:0 2px}
+.topics{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.topics span{font:700 15px "Anek Bangla",sans-serif;color:var(--mute);margin-right:4px}
+.topics b{font:700 15px "Anek Bangla",sans-serif;border:2px solid var(--ink);border-radius:99px;padding:3px 14px;background:#fff}
+.topics b:nth-of-type(1){background:var(--amber);border-color:var(--amber)}
+.topics b:nth-of-type(4),.topics b:nth-of-type(5){background:var(--violet);border-color:var(--violet);color:#fff}
 .why{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:8px 24px;max-width:880px}
 .why li{position:relative;padding-left:30px}
 .why li::before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
@@ -254,7 +259,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     </div>
   </div>
   <p class="tagline">আইসিটি মুখস্থের বিষয় না, <mark>বুঝে ফেলার</mark> বিষয়।</p>
-  <p class="intro">একজন ইঞ্জিনিয়ারের চোখে আইসিটি, শিক্ষকের সহজ ভাষায়। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আন্তর্জাতিক জার্নালে প্রকাশিত গবেষণা, আর <b>২০১২ থেকে টানা ১৪ বছরের বেশি</b> পড়ানোর অভিজ্ঞতা। বাইনারি, লজিক গেট, C প্রোগ্রামিং বা HTML যত কঠিনই লাগুক, এখানে প্রতিটা টপিক শুরু হয় একদম গোড়া থেকে।</p>
+  <p class="intro">একজন ইঞ্জিনিয়ারের চোখে আইসিটি, শিক্ষকের সহজ ভাষায়। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আন্তর্জাতিক জার্নালে প্রকাশিত গবেষণা, আর <b>২০১২ থেকে টানা ১৪ বছরের বেশি</b> পড়ানোর অভিজ্ঞতা। কোডিং থেকে এআই, আজকের ট্রেন্ডিং প্রযুক্তিগুলো এখানে শেখানো হয় বাস্তব উদাহরণ দিয়ে, একদম সহজ করে।</p>
+  <div class="topics"><span>যা সহজ করে শেখাই</span><b>Python</b><b>Coding</b><b>Digital Logic</b><b>AI</b><b>Machine Learning</b><b>Big Data</b></div>
   <ul class="why">
     <li><b>ছবি আর উদাহরণে বোঝা</b>, না বুঝে মুখস্থ নয়</li>
     <li><b>বোর্ড প্রশ্ন বিশ্লেষণ</b> করে বানানো নিজের নোট, এখানে ফ্রি ডাউনলোড</li>
