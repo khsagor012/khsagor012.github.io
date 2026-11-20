@@ -171,6 +171,19 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .file .meta{color:var(--mute);font-size:14px;margin:2px 0 10px}
 .btns{display:flex;gap:8px;flex-wrap:wrap}
 .file .btn{min-height:40px;font-size:15px;padding:0 14px}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.how div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px 14px 62px;position:relative}
+.how i{position:absolute;left:14px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:800 18px "Anek Bangla",sans-serif;font-style:normal}
+.how b{display:block;font:800 18px "Anek Bangla",sans-serif}
+.how span{font-size:14.5px;color:var(--mute)}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;margin-bottom:18px}
+.cbtn{font:inherit;text-align:left;cursor:pointer;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--ink);text-decoration:none;display:block}
+.cbtn b{display:block;font:800 17px "Anek Bangla",sans-serif}
+.cbtn span{font-size:14px;color:var(--mute)}
+.cbtn[aria-pressed=true]{border-color:var(--green);background:color-mix(in srgb,var(--green) 10%,#fff)}
+.cbtn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sample{font-size:13px;color:var(--mute);margin:6px 0 0}
+@media(max-width:700px){.how{grid-template-columns:minmax(0,1fr)}}
 .empty{color:var(--mute);background:#fff;border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
 .msg{min-height:1.5em;color:var(--mute);font-size:14.5px;margin-top:12px}
 .up{margin-top:30px;border:2px dashed var(--green);border-radius:18px;padding:20px;background:#fff}
@@ -242,6 +255,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <h2 class="htitle">Explore</h2>
   <div class="tiles" id="tiles"></div>
   <h2 class="htitle">Notes</h2>
+  <div class="cats" id="homeCats"></div>
   <div id="homeNotes"></div>
   <div class="cta"><a class="btn g" href="#notes">সব নোট দেখো</a></div>
 </div></header>
@@ -414,9 +428,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <section class="band view tint" id="notes" style="--c:var(--green)"><div class="wrap">
   <div class="sec-h"><span class="dot"></span><h2>Notes Download</h2><span class="rule"></span></div>
   <p class="lead">শিক্ষার্থীদের জন্য বিনামূল্যে। বিভাগ বেছে নাও বা নাম লিখে খোঁজো, তারপর Download চাপো।</p>
+<div class="how">
+    <div><i>1</i><b>বিভাগ বাছো</b><span>HSC, Class 9–10, English Version…</span></div>
+    <div><i>2</i><b>Download চাপো</b><span>সবুজ বোতাম, অথবা Open চেপে দেখে নাও</span></div>
+    <div><i>3</i><b>ফোনে পাবে</b><span>Files অ্যাপের Downloads ফোল্ডারে</span></div>
+  </div>
+  <div class="cats" id="catCards"></div>
   <div class="tools">
     <input id="q" type="search" placeholder="নোট খোঁজো, যেমন: Chapter 3, Boolean" aria-label="নোট খোঁজো">
-    <div class="chips" id="chips"></div>
   </div>
   <div id="list"></div>
   <div class="msg" id="msg" role="status"></div>
@@ -596,7 +615,8 @@ const cats = [
   {k:'admission', name:'Admission (ভর্তি প্রস্তুতি)', short:'Admission'},
   {k:'job', name:'Job Preparation (বিসিএস, ব্যাংক, প্রাথমিক)', short:'Job Prep'}
 ];
-const exts = /\.(pdf|docx?|pptx?|xlsx?|zip)$/i;
+const exts = /\.(pdf|docx?|pptx?|xlsx?|zip|html?|jpe?g|png)$/i;
+const skip = p => /(^|\/)(index[^/]*\.html?|404\.html|readme[^/]*)$/i.test(p) || (/\.(jpe?g|png)$/i.test(p) && !p.startsWith('notes/'));
 const guess = n => /english|ইংলিশ/i.test(n) ? 'english-version'
   : /ভর্তি|admission/i.test(n) ? 'admission'
   : /বিসিএস|bcs|ব্যাংক|bank|চাকরি|job|প্রাথমিক|primary/i.test(n) ? 'job'
@@ -608,48 +628,70 @@ const pretty = n => {
   return t.split(' ').map(w => UP[w.toLowerCase()] || (/^[a-z]/.test(w) ? w[0].toUpperCase() + w.slice(1) : w)).join(' ');
 };
 let notes = [], filter = 'all', q = '';
-const list = document.getElementById('list'), msg = document.getElementById('msg'), chips = document.getElementById('chips');
+const list = document.getElementById('list'), msg = document.getElementById('msg');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-chips.innerHTML = [{k:'all', short:'All'}].concat(cats).map(c => `<button class="chip" data-f="${c.k}" aria-pressed="${c.k === 'all'}">${c.short}</button>`).join('');
 const kb = n => n ? (n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB') : '';
 const card = n => {
   const ext = (n.file.split('.').pop() || '').toUpperCase().slice(0, 4);
   const cat = cats.find(c => c.k === n.cat);
   return `<div class="file"><span class="ic">${esc(ext)}</span><div><h4>${esc(n.title)}</h4>
-    <div class="meta">${esc(cat ? cat.short : '')}${n.size ? ' · ' + esc(kb(n.size)) : ''}</div>
+    <div class="meta">${n.sample ? 'নমুনা · ' : ''}${esc(cat ? cat.short : '')}${n.size ? ' · ' + esc(kb(n.size)) : ''}</div>
     <div class="btns"><a class="btn g dl" href="${esc(n.file)}" download="${esc(decodeURIComponent(n.file.split('/').pop()))}">Download</a><a class="btn o" href="${esc(n.file)}" target="_blank" rel="noopener">Open</a></div></div></div>`;
 };
 const render = () => {
   const ql = q.trim().toLowerCase();
-  list.innerHTML = cats.filter(c => filter === 'all' || filter === c.k).map(c => {
+  const shown = cats.filter(c => filter === c.k || (filter === 'all' && notes.some(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)))));
+  if (!shown.length) { list.innerHTML = `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'নোট শিগগিরই যোগ হচ্ছে। দরকারি নোটের জন্য WhatsApp-এ জানাও।'}</div>`; }
+  else list.innerHTML = shown.map(c => {
     const items = notes.filter(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)));
     const body = items.length ? `<div class="files">${items.map(card).join('')}</div>`
-      : `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'এই বিভাগে এখনো নোট যোগ হয়নি। নতুন নোট এলে এখানেই পাবে।'}</div>`;
+      : `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'এই বিভাগে এখনো নোট যোগ হয়নি। নতুন নোট এলে এখানেই পাবে। দরকারি নোটের জন্য WhatsApp-এ জানাও।'}</div>`;
     return `<div class="cat"><h3>${c.name}</h3>${body}</div>`;
   }).join('');
+  const cc = c => notes.filter(n => n.cat === c.k).length;
+  document.getElementById('catCards').innerHTML = [{k:'all', short:'All Notes'}].concat(cats).map(c => `<button class="cbtn" data-f="${c.k}" aria-pressed="${filter === c.k}"><b>${c.short}</b><span>${bn(c.k === 'all' ? notes.length : cc(c))}টি নোট</span></button>`).join('');
+  document.getElementById('homeCats').innerHTML = cats.map(c => `<a class="cbtn" href="#notes" data-go="${c.k}"><b>${c.short}</b><span>${bn(cc(c))}টি নোট</span></a>`).join('');
   const hn = document.getElementById('homeNotes');
   hn.innerHTML = notes.length ? `<div class="files">${notes.slice(0, 4).map(card).join('')}</div>` : '<div class="empty">নোট শিগগিরই যোগ হচ্ছে। Notes পাতায় বিভাগ অনুযায়ী সব পাবে।</div>';
 };
 render();
-const fromGitHub = () => fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`)
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => (d.tree || []).filter(t => t.type === 'blob' && exts.test(t.path)).map(t => {
+const fromGitHub = () => fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/HEAD?recursive=1`)
+  .then(r => { if (!r.ok) throw new Error('GitHub ' + r.status); return r.json(); })
+  .then(d => (d.tree || []).filter(t => t.type === 'blob' && exts.test(t.path) && !skip(t.path)).map(t => {
     const parts = t.path.split('/'), name = parts[parts.length - 1];
     const folder = parts[0] === 'notes' && cats.some(c => c.k === parts[1]) ? parts[1] : '';
-    return {cat: folder || guess(name), file: parts.map(encodeURIComponent).join('/'), size: t.size, title: pretty(name)};
+    return {cat: folder || guess(t.path), file: parts.map(encodeURIComponent).join('/'), size: t.size, title: pretty(name)};
   }).sort((a, b) => a.title.localeCompare(b.title, 'en', {numeric:true})));
-const fromJson = () => fetch('notes.json').then(r => r.ok ? r.json() : []).then(d => Array.isArray(d) ? d : []);
-(CONFIG.owner ? fromGitHub().catch(fromJson) : fromJson()).then(d => { notes = d; render(); }).catch(() => render());
+const fromJsd = () => fetch(`https://data.jsdelivr.com/v1/packages/gh/${CONFIG.owner}/${CONFIG.repo}@main?structure=flat`)
+  .then(r => { if (!r.ok) throw new Error('jsDelivr ' + r.status); return r.json(); })
+  .then(d => (d.files || []).map(f => ({path: f.name.replace(/^\//, ''), size: f.size})).filter(t => exts.test(t.path) && !skip(t.path)).map(t => {
+    const parts = t.path.split('/'), name = parts[parts.length - 1];
+    const folder = parts[0] === 'notes' && cats.some(c => c.k === parts[1]) ? parts[1] : '';
+    return {cat: folder || guess(t.path), file: parts.map(encodeURIComponent).join('/'), size: t.size, title: pretty(name)};
+  }));
+const fromJson = () => fetch('notes.json').then(r => r.ok ? r.json() : []).then(d => Array.isArray(d) ? d : []).catch(() => []);
+const load = () => (CONFIG.owner ? fromGitHub().catch(fromJsd) : fromJson())
+  .then(d => { notes = d; render(); msg.textContent = notes.length ? `মোট ${bn(notes.length)}টি নোট আছে।` : ''; })
+  .catch(err => fromJson().then(d => {
+    notes = d; render();
+    msg.innerHTML = `নোটের তালিকা এই মুহূর্তে আনা যাচ্ছে না (${esc(err.message)})। একটু পরে পাতা রিফ্রেশ করো${CONFIG.owner ? `, অথবা <a href="https://github.com/${CONFIG.owner}/${CONFIG.repo}" target="_blank" rel="noopener">এখান থেকে সরাসরি ফাইলগুলো দেখো</a>` : ''}।`;
+  }));
+load();
 document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
-chips.addEventListener('click', e => {
-  const b = e.target.closest('.chip'); if (!b) return;
-  filter = b.dataset.f;
-  chips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
-  render();
+document.addEventListener('click', e => {
+  const b = e.target.closest('.cbtn'); if (!b) return;
+  if (b.dataset.go) { filter = b.dataset.go; render(); return; }
+  filter = b.dataset.f; render();
+  document.getElementById('list').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
 });
 document.getElementById('upbtns').innerHTML = CONFIG.owner
-  ? `<a class="btn g" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}/upload/${CONFIG.branch}" target="_blank" rel="noopener">Upload Notes</a><a class="btn o" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}" target="_blank" rel="noopener">GitHub-এ ফাইলগুলো দেখুন</a>`
+  ? `<a class="btn g" id="upMain" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}/upload/${CONFIG.branch}" target="_blank" rel="noopener">Upload Notes</a><a class="btn o" href="https://github.com/${CONFIG.owner}/${CONFIG.repo}" target="_blank" rel="noopener">GitHub-এ ফাইলগুলো দেখুন</a>`
   : '<span class="empty">GitHub Pages-এ সাইট খুললে এখানে Upload Notes বোতাম দেখাবে।</span>';
+
+if (CONFIG.owner) fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}`).then(r => r.ok ? r.json() : null).then(d => {
+  const a = document.getElementById('upMain');
+  if (d && d.default_branch && a) a.href = `https://github.com/${CONFIG.owner}/${CONFIG.repo}/upload/${d.default_branch}`;
+}).catch(() => {});
 
 /* claude.ai preview: use the downloads capability */
 document.addEventListener('click', async e => {
