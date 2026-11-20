@@ -40,8 +40,16 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 
 /* hero */
 .hero{padding-bottom:10px}
-.top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-.phw{display:inline-block;justify-self:start;align-self:center;width:max-content;line-height:0;padding:6px;border-radius:50%;background:conic-gradient(from 200deg,var(--blue),var(--violet),var(--pink),var(--red),var(--green),var(--blue));box-shadow:0 14px 30px rgba(10,92,255,.18);flex:none}
+.top{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,330px);gap:clamp(18px,3vw,36px);align-items:center}
+@media(max-width:1100px){.top{grid-template-columns:auto minmax(0,1fr)}.qfacts{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.qfacts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.qfacts .ct{padding:14px 14px 12px;border-radius:16px}
+.qfacts .ct b{font-size:clamp(26px,2.6vw,34px)}
+.qfacts .ct strong{font-size:15px;margin-top:6px}
+.qfacts .ct span{font-size:12.5px}
+.qfacts .ct::after{width:70px;height:70px;right:-22px;bottom:-22px;border-width:11px}
+.phw{display:inline-block;justify-self:start;align-self:center;width:max-content;line-height:0;padding:6px;border-radius:50%;background:var(--blue);box-shadow:0 14px 30px rgba(10,92,255,.18);flex:none}
 .ph{display:block;width:clamp(110px,14vw,168px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 22%;border:5px solid #fff;background:#fff}
 .hi{font-family:"Anek Bangla",sans-serif;font-weight:700;color:var(--mute);font-size:18px;margin:0 0 4px}
 .hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.01em}
@@ -228,6 +236,15 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .path b{display:block;font:800 18px/1.2 "Anek Bangla",sans-serif;color:var(--c)}
 .path span{display:block;font-size:13px;color:var(--mute);line-height:1.35}
 .acc{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.tp summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;font:700 15px "Anek Bangla",sans-serif;color:var(--c);border:1.5px solid color-mix(in srgb,var(--c) 35%,#fff);border-radius:12px;padding:9px 14px;margin-top:auto}
+.tp summary::-webkit-details-marker{display:none}
+.tp summary span{font-size:13px;color:var(--mute);margin-left:auto}
+.tp summary::after{content:"";width:9px;height:9px;border-right:2.5px solid var(--c);border-bottom:2.5px solid var(--c);transform:rotate(45deg);margin:-4px 2px 0 0;transition:transform .2s}
+.tp[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.tp[open] summary{background:color-mix(in srgb,var(--c) 8%,#fff);margin-bottom:12px}
+.tp summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.cgrid{align-items:start}
+.cc2 .ld{flex:1}
 .cgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .cc2{background:#fff;border:1px solid var(--line);border-top:6px solid var(--c);border-radius:18px;padding:16px 16px 18px;display:flex;flex-direction:column}
 .cc2 header{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center}
@@ -264,6 +281,7 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .slots b{font:800 18px "Anek Bangla",sans-serif}
 @media(max-width:1000px){.sched{grid-template-columns:minmax(0,1fr)}.sdays{grid-template-columns:repeat(2,minmax(0,1fr))}.sched .btn{justify-content:center}}
 @media(max-width:480px){.sdays,.slots{grid-template-columns:minmax(0,1fr)}}
+.empty.sm{padding:10px 14px;font-size:14px}
 .chh{font:800 17px "Anek Bangla",sans-serif;margin:16px 0 10px;padding-left:12px;border-left:5px solid var(--green)}
 .empty{color:var(--mute);background:#fff;border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
 .msg{min-height:1.5em;color:var(--mute);font-size:14.5px;margin-top:12px}
@@ -293,7 +311,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .totop.on{opacity:1;pointer-events:auto}
 @media(max-width:980px){.counters{grid-template-columns:repeat(2,minmax(0,1fr))}.edsum{grid-template-columns:repeat(2,minmax(0,1fr))}.paper{grid-template-columns:minmax(0,1fr)}.xp-top{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:860px){.menu{display:inline-flex}.links{display:none;position:absolute;right:0;left:0;top:calc(100% + 10px);background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 26px rgba(0,0,0,.1);flex-direction:column;padding:8px 0 14px;gap:2px}.links.open{display:flex}.links a{font-size:18px;padding:12px 16px;border-radius:12px}}
-@media(max-width:600px){.top{grid-template-columns:minmax(0,1fr)}.fig{height:640px}.deg{grid-template-columns:minmax(0,1fr)}.deg .y{flex-direction:row;align-items:baseline;padding:12px 18px}.ex{grid-template-columns:minmax(0,1fr)}.lead{margin-left:0}.ct strong{font-size:16px}.wafloat span{display:none}.wafloat{padding:0 14px}}
+@media(max-width:600px){.top{grid-template-columns:auto minmax(0,1fr);align-items:start}.top .ph{width:84px}.top .phw{margin-top:6px}.top h1{font-size:34px}.top .role{font-size:15px}.fig{height:640px}.deg{grid-template-columns:minmax(0,1fr)}.deg .y{flex-direction:row;align-items:baseline;padding:12px 18px}.ex{grid-template-columns:minmax(0,1fr)}.lead{margin-left:0}.ct strong{font-size:16px}.wafloat span{display:none}.wafloat{padding:0 14px}}
 @media(prefers-reduced-motion:reduce){.tile{transition:none}.fig .train{display:none}}
 </style>
 </head>
@@ -322,6 +340,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <li style="--c:var(--violet)"><i>৪</i><b>এগোই</b><span>চাইলে অ্যাডভান্সড</span></li>
       </ol>
     </div>
+  <div class="qfacts" aria-label="এক নজরে">
+      <div class="ct" style="--c:var(--green)"><b><i data-count="teach">১৪</i>+</b><strong>বছর পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত</span></div>
+      <div class="ct" style="--c:var(--blue)"><b>২০২৫</b><strong>থেকে লায়ন্সে</strong><span id="lionsSpan">আইসিটি শিক্ষক, কলেজ শাখা</span></div>
+      <div class="ct" style="--c:var(--red)"><b>৩.৭১</b><strong>M.Sc. CGPA</strong><span>মেধাক্রম ১ম, ইইই</span></div>
+      <div class="ct" style="--c:var(--violet)"><b>২১.৮৩%</b><strong>Heliyon ২০২৩</strong><span>সোলার সেল গবেষণা</span></div>
+    </div>
   </div>
   <p class="intro">পড়াশোনায় ইঞ্জিনিয়ার, পেশায় আইসিটি শিক্ষক। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আর Elsevier-এর <b>Heliyon</b> জার্নালে প্রকাশিত সোলার সেল গবেষণার সহ-লেখক। <b>২০১২ সাল থেকে</b> শিক্ষার্থীদের সাথে আছি। আমার ক্লাসের লক্ষ্য দুটো: পরীক্ষায় ভালো ফল, আর প্রযুক্তিটা সত্যিই বোঝা, যাতে আগামীর AI, কোডিং আর ডেটার দুনিয়ার জন্য নিজেকে তৈরি করা যায়।</p>
   <div class="feat">
@@ -347,12 +371,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <section class="learn" aria-label="সহজ করে যা শেখাই">
     <div class="lh"><h2>সহজ করে যা শেখাই</h2><p>HSC ICT বই (২০২৬-২০২৭ শিক্ষাবর্ষ), বইয়ের ক্রম অনুযায়ী টপিক</p></div>
     <div class="cgrid">
-      <article class="cc2" style="--c:var(--violet)"><header><span class="no">১</span><div><span class="cn">অধ্যায় ১ · ২০টি টপিক</span><h3>তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত</h3><small>ICT: World &amp; Bangladesh Perspective</small></div></header><p class="ld">বিশ্বগ্রাম থেকে AI, রোবটিক্স আর ন্যানোটেকনোলজি: আধুনিক প্রযুক্তি কীভাবে আমাদের জীবন বদলে দিচ্ছে।</p><ul class="chips2"><li><em>১</em>বিশ্বগ্রাম</li><li><em>২</em>Virtual Reality</li><li><em>৩</em>Augmented Reality</li><li><em>৪</em>Artificial Intelligence</li><li><em>৫</em>Neural Network ও Deep Learning</li><li><em>৬</em>AI Model</li><li><em>৭</em>Robotics</li><li><em>৮</em>IoT</li><li><em>৯</em>Big Data</li><li><em>১০</em>Software Engineering</li><li><em>১১</em>মহাকাশ অভিযান</li><li><em>১২</em>প্রতিরক্ষা ও Drone</li><li><em>১৩</em>Biometrics</li><li><em>১৪</em>Bioinformatics</li><li><em>১৫</em>Genetic Engineering</li><li><em>১৬</em>Nanotechnology</li><li><em>১৭</em>ICT ব্যবহারে নৈতিকতা</li><li><em>১৮</em>Hacking ও Ethical Hacking</li><li><em>১৯</em>সামাজিক জীবনে ICT</li><li><em>২০</em>ICT ও অর্থনৈতিক উন্নয়ন</li></ul></article>
-      <article class="cc2" style="--c:var(--blue)"><header><span class="no">২</span><div><span class="cn">অধ্যায় ২ · ১৪টি টপিক</span><h3>কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3><small>Communication Systems &amp; Networking</small></div></header><p class="ld">তথ্য কীভাবে এক জায়গা থেকে আরেক জায়গায় যায়, আর নেটওয়ার্ক কীভাবে পুরো পৃথিবীকে জুড়ে রাখে।</p><ul class="chips2"><li><em>১</em>কমিউনিকেশন সিস্টেম</li><li><em>২</em>Data Communication</li><li><em>৩</em>Bandwidth</li><li><em>৪</em>Transmission Method ও Mode</li><li><em>৫</em>Unicast, Broadcast, Multicast</li><li><em>৬</em>Wired Media (Twisted Pair, Coaxial, Fiber)</li><li><em>৭</em>Wireless Media ও Satellite</li><li><em>৮</em>Bluetooth, Wi-Fi, WiMAX</li><li><em>৯</em>Mobile Network (1G–5G)</li><li><em>১০</em>Computer Networking</li><li><em>১১</em>Network Devices</li><li><em>১২</em>Network Topology</li><li><em>১৩</em>OSI Model</li><li><em>১৪</em>Cloud Computing</li></ul></article>
-      <article class="cc2" style="--c:var(--red)"><header><span class="no">৩</span><div><span class="cn">অধ্যায় ৩ · ১৪টি টপিক</span><h3>সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</h3><small>Number System &amp; Digital Devices</small></div></header><p class="ld">কম্পিউটারের ভাষা বাইনারি, আর লজিক গেট দিয়ে কীভাবে ডিজিটাল যন্ত্র তৈরি হয়।</p><ul class="chips2"><li><em>১</em>Number System</li><li><em>২</em>সংখ্যা রূপান্তর</li><li><em>৩</em>Binary যোগ-বিয়োগ</li><li><em>৪</em>Signed Number</li><li><em>৫</em>Code (ASCII, Unicode)</li><li><em>৬</em>Boolean Algebra</li><li><em>৭</em>De Morgan ও Truth Table</li><li><em>৮</em>Logic Gate</li><li><em>৯</em>Universal Gate</li><li><em>১০</em>XOR, XNOR</li><li><em>১১</em>Digital Devices</li><li><em>১২</em>Encoder, Decoder</li><li><em>১৩</em>Adder</li><li><em>১৪</em>Flip-Flop, Register, Counter</li></ul></article>
-      <article class="cc2" style="--c:var(--pink)"><header><span class="no">৪</span><div><span class="cn">অধ্যায় ৪ · ১০টি টপিক</span><h3>ওয়েব ডিজাইন পরিচিতি এবং HTML</h3><small>Web Design &amp; HTML</small></div></header><p class="ld">HTML দিয়ে নিজের ওয়েবপেজ বানানো, প্রথম ট্যাগ থেকে ওয়েবসাইট পাবলিশ পর্যন্ত।</p><ul class="chips2"><li><em>১</em>Web Design ধারণা</li><li><em>২</em>IP, DNS, HTTP</li><li><em>৩</em>Website Structure</li><li><em>৪</em>HTML</li><li><em>৫</em>Heading ও Text Formatting</li><li><em>৬</em>List, Link, Image</li><li><em>৭</em>Table</li><li><em>৮</em>CSS</li><li><em>৯</em>Front-end ও Back-end</li><li><em>১০</em>Website Publishing</li></ul></article>
-      <article class="cc2" style="--c:var(--green)"><header><span class="no">৫</span><div><span class="cn">অধ্যায় ৫ · ১৫টি টপিক</span><h3>প্রোগ্রামিং ভাষা</h3><small>Programming Language</small></div></header><p class="ld">Python দিয়ে সমস্যা সমাধান: অ্যালগরিদম আর ফ্লোচার্ট থেকে আসল প্রোগ্রাম।</p><ul class="chips2"><li><em>১</em>Programming ধারণা</li><li><em>২</em>Language-এর প্রজন্ম</li><li><em>৩</em>Compiler ও Interpreter</li><li><em>৪</em>Structured, Modular, OOP</li><li><em>৫</em>Computational Thinking</li><li><em>৬</em>Algorithm ও Flowchart</li><li><em>৭</em>Pseudocode ও Dry Run</li><li><em>৮</em>Python</li><li><em>৯</em>Variable, Data Type, Operator</li><li><em>১০</em>Conditional Logic</li><li><em>১১</em>Loop ও Nested Loop</li><li><em>১২</em>Data Structure (List, Tuple, Dictionary, Set)</li><li><em>১৩</em>Function</li><li><em>১৪</em>File Handling</li><li><em>১৫</em>ছোট ছোট প্রজেক্ট</li></ul></article>
-      <article class="cc2" style="--c:var(--ink)"><header><span class="no">৬</span><div><span class="cn">অধ্যায় ৬ · ১০টি টপিক</span><h3>ডেটাবেজ ম্যানেজমেন্ট সিস্টেম</h3><small>Database Management System</small></div></header><p class="ld">ডেটা গুছিয়ে রাখা আর SQL দিয়ে দরকারি তথ্য মুহূর্তে খুঁজে বের করা।</p><ul class="chips2"><li><em>১</em>Database ধারণা</li><li><em>২</em>DBMS</li><li><em>৩</em>Relational Database</li><li><em>৪</em>SQL</li><li><em>৫</em>Primary ও Foreign Key</li><li><em>৬</em>Data Integrity ও Relation</li><li><em>৭</em>Database ও Table তৈরি</li><li><em>৮</em>SELECT, INSERT, UPDATE, DELETE</li><li><em>৯</em>সরকারি ও কর্পোরেট Database</li><li><em>১০</em>Data Security ও Encryption</li></ul></article>
+      <article class="cc2" style="--c:var(--violet)"><header><span class="no">১</span><div><span class="cn">অধ্যায় ১ · ২০টি টপিক</span><h3>তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত</h3><small>ICT: World &amp; Bangladesh Perspective</small></div></header><p class="ld">বিশ্বগ্রাম থেকে AI, রোবটিক্স আর ন্যানোটেকনোলজি: আধুনিক প্রযুক্তি কীভাবে আমাদের জীবন বদলে দিচ্ছে।</p><details class="tp"><summary>সব টপিক দেখো <span>২০টি</span></summary><ul class="chips2"><li><em>১</em>বিশ্বগ্রাম</li><li><em>২</em>Virtual Reality</li><li><em>৩</em>Augmented Reality</li><li><em>৪</em>Artificial Intelligence</li><li><em>৫</em>Neural Network ও Deep Learning</li><li><em>৬</em>AI Model</li><li><em>৭</em>Robotics</li><li><em>৮</em>IoT</li><li><em>৯</em>Big Data</li><li><em>১০</em>Software Engineering</li><li><em>১১</em>মহাকাশ অভিযান</li><li><em>১২</em>প্রতিরক্ষা ও Drone</li><li><em>১৩</em>Biometrics</li><li><em>১৪</em>Bioinformatics</li><li><em>১৫</em>Genetic Engineering</li><li><em>১৬</em>Nanotechnology</li><li><em>১৭</em>ICT ব্যবহারে নৈতিকতা</li><li><em>১৮</em>Hacking ও Ethical Hacking</li><li><em>১৯</em>সামাজিক জীবনে ICT</li><li><em>২০</em>ICT ও অর্থনৈতিক উন্নয়ন</li></ul></details></article>
+      <article class="cc2" style="--c:var(--blue)"><header><span class="no">২</span><div><span class="cn">অধ্যায় ২ · ১৪টি টপিক</span><h3>কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং</h3><small>Communication Systems &amp; Networking</small></div></header><p class="ld">তথ্য কীভাবে এক জায়গা থেকে আরেক জায়গায় যায়, আর নেটওয়ার্ক কীভাবে পুরো পৃথিবীকে জুড়ে রাখে।</p><details class="tp"><summary>সব টপিক দেখো <span>১৪টি</span></summary><ul class="chips2"><li><em>১</em>কমিউনিকেশন সিস্টেম</li><li><em>২</em>Data Communication</li><li><em>৩</em>Bandwidth</li><li><em>৪</em>Transmission Method ও Mode</li><li><em>৫</em>Unicast, Broadcast, Multicast</li><li><em>৬</em>Wired Media (Twisted Pair, Coaxial, Fiber)</li><li><em>৭</em>Wireless Media ও Satellite</li><li><em>৮</em>Bluetooth, Wi-Fi, WiMAX</li><li><em>৯</em>Mobile Network (1G–5G)</li><li><em>১০</em>Computer Networking</li><li><em>১১</em>Network Devices</li><li><em>১২</em>Network Topology</li><li><em>১৩</em>OSI Model</li><li><em>১৪</em>Cloud Computing</li></ul></details></article>
+      <article class="cc2" style="--c:var(--red)"><header><span class="no">৩</span><div><span class="cn">অধ্যায় ৩ · ১৪টি টপিক</span><h3>সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস</h3><small>Number System &amp; Digital Devices</small></div></header><p class="ld">কম্পিউটারের ভাষা বাইনারি, আর লজিক গেট দিয়ে কীভাবে ডিজিটাল যন্ত্র তৈরি হয়।</p><details class="tp"><summary>সব টপিক দেখো <span>১৪টি</span></summary><ul class="chips2"><li><em>১</em>Number System</li><li><em>২</em>সংখ্যা রূপান্তর</li><li><em>৩</em>Binary যোগ-বিয়োগ</li><li><em>৪</em>Signed Number</li><li><em>৫</em>Code (ASCII, Unicode)</li><li><em>৬</em>Boolean Algebra</li><li><em>৭</em>De Morgan ও Truth Table</li><li><em>৮</em>Logic Gate</li><li><em>৯</em>Universal Gate</li><li><em>১০</em>XOR, XNOR</li><li><em>১১</em>Digital Devices</li><li><em>১২</em>Encoder, Decoder</li><li><em>১৩</em>Adder</li><li><em>১৪</em>Flip-Flop, Register, Counter</li></ul></details></article>
+      <article class="cc2" style="--c:var(--pink)"><header><span class="no">৪</span><div><span class="cn">অধ্যায় ৪ · ১০টি টপিক</span><h3>ওয়েব ডিজাইন পরিচিতি এবং HTML</h3><small>Web Design &amp; HTML</small></div></header><p class="ld">HTML দিয়ে নিজের ওয়েবপেজ বানানো, প্রথম ট্যাগ থেকে ওয়েবসাইট পাবলিশ পর্যন্ত।</p><details class="tp"><summary>সব টপিক দেখো <span>১০টি</span></summary><ul class="chips2"><li><em>১</em>Web Design ধারণা</li><li><em>২</em>IP, DNS, HTTP</li><li><em>৩</em>Website Structure</li><li><em>৪</em>HTML</li><li><em>৫</em>Heading ও Text Formatting</li><li><em>৬</em>List, Link, Image</li><li><em>৭</em>Table</li><li><em>৮</em>CSS</li><li><em>৯</em>Front-end ও Back-end</li><li><em>১০</em>Website Publishing</li></ul></details></article>
+      <article class="cc2" style="--c:var(--green)"><header><span class="no">৫</span><div><span class="cn">অধ্যায় ৫ · ১৫টি টপিক</span><h3>প্রোগ্রামিং ভাষা</h3><small>Programming Language</small></div></header><p class="ld">Python দিয়ে সমস্যা সমাধান: অ্যালগরিদম আর ফ্লোচার্ট থেকে আসল প্রোগ্রাম।</p><details class="tp"><summary>সব টপিক দেখো <span>১৫টি</span></summary><ul class="chips2"><li><em>১</em>Programming ধারণা</li><li><em>২</em>Language-এর প্রজন্ম</li><li><em>৩</em>Compiler ও Interpreter</li><li><em>৪</em>Structured, Modular, OOP</li><li><em>৫</em>Computational Thinking</li><li><em>৬</em>Algorithm ও Flowchart</li><li><em>৭</em>Pseudocode ও Dry Run</li><li><em>৮</em>Python</li><li><em>৯</em>Variable, Data Type, Operator</li><li><em>১০</em>Conditional Logic</li><li><em>১১</em>Loop ও Nested Loop</li><li><em>১২</em>Data Structure (List, Tuple, Dictionary, Set)</li><li><em>১৩</em>Function</li><li><em>১৪</em>File Handling</li><li><em>১৫</em>ছোট ছোট প্রজেক্ট</li></ul></details></article>
+      <article class="cc2" style="--c:var(--ink)"><header><span class="no">৬</span><div><span class="cn">অধ্যায় ৬ · ১০টি টপিক</span><h3>ডেটাবেজ ম্যানেজমেন্ট সিস্টেম</h3><small>Database Management System</small></div></header><p class="ld">ডেটা গুছিয়ে রাখা আর SQL দিয়ে দরকারি তথ্য মুহূর্তে খুঁজে বের করা।</p><details class="tp"><summary>সব টপিক দেখো <span>১০টি</span></summary><ul class="chips2"><li><em>১</em>Database ধারণা</li><li><em>২</em>DBMS</li><li><em>৩</em>Relational Database</li><li><em>৪</em>SQL</li><li><em>৫</em>Primary ও Foreign Key</li><li><em>৬</em>Data Integrity ও Relation</li><li><em>৭</em>Database ও Table তৈরি</li><li><em>৮</em>SELECT, INSERT, UPDATE, DELETE</li><li><em>৯</em>সরকারি ও কর্পোরেট Database</li><li><em>১০</em>Data Security ও Encryption</li></ul></details></article>
     </div>
   </section>
   <section class="skillbar" aria-label="সফটওয়্যার ও প্রোগ্রামিং দক্ষতা">
@@ -369,12 +393,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div><small>Certification</small><b>Certified Web Developer</b><span>NESCOM</span><em>+ Top-up IT Training (Web Development), LICT প্রকল্প</em></div>
     </div>
   </section>
-  <div class="counters">
-    <div class="ct" style="--c:var(--green)"><b><i data-count="teach">১৪</i>+</b><strong>বছর পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত</span></div>
-    <div class="ct" style="--c:var(--blue)"><b>২০২৫</b><strong>থেকে লায়ন্সে</strong><span id="lionsSpan">আইসিটি শিক্ষক, কলেজ শাখা</span></div>
-    <div class="ct" style="--c:var(--red)"><b>৩.৭১</b><strong>M.Sc. CGPA</strong><span>মেধাক্রম ১ম, ইইই</span></div>
-    <div class="ct" style="--c:var(--violet)"><b>২১.৮৩%</b><strong>Heliyon ২০২৩</strong><span>সোলার সেল গবেষণা</span></div>
-  </div>
   <div class="jr">
     <h2>My Journey</h2>
     <p>স্কুল থেকে আজকের ক্লাসরুম পর্যন্ত পথটা এক লাইনে। যেকোনো স্টেশনে চাপো।</p>
@@ -768,12 +786,20 @@ const card = n => {
 };
 const render = () => {
   const ql = q.trim().toLowerCase();
-  const shown = cats.filter(c => filter === c.k || (filter === 'all' && notes.some(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)))));
+  const shown = cats.filter(c => filter === c.k || (filter === 'all' && !ql && c.k === 'hsc') || (filter === 'all' && notes.some(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)))));
   if (!shown.length) { list.innerHTML = `<div class="empty">${ql ? 'এই খোঁজে কোনো নোট পাওয়া যায়নি।' : 'নোট শিগগিরই যোগ হচ্ছে। দরকারি নোটের জন্য WhatsApp-এ জানাও।'}</div>`; }
   else list.innerHTML = shown.map(c => {
     const items = notes.filter(n => n.cat === c.k && (!ql || n.title.toLowerCase().includes(ql)));
     const chOf = n => { const m = n.title.match(/Chapter (\d+)/i); return m ? +m[1] : 0; };
     const groups = [...new Set(items.map(chOf))].sort((x, y) => (x || 99) - (y || 99));
+    if (c.k === 'hsc' && !ql) {
+      const CH = ['ICT: বিশ্ব ও বাংলাদেশ প্রেক্ষিত','কমিউনিকেশন সিস্টেমস ও নেটওয়ার্কিং','সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস','ওয়েব ডিজাইন ও HTML','প্রোগ্রামিং ভাষা','ডেটাবেজ ম্যানেজমেন্ট সিস্টেম'];
+      const extra = items.filter(n => !chOf(n) || chOf(n) > 6);
+      return `<div class="cat"><h3>${c.name}</h3>` + CH.map((t, k) => {
+        const its = items.filter(n => chOf(n) === k + 1);
+        return `<h4 class="chh">Chapter ${k + 1} · অধ্যায় ${bn(k + 1)}: ${t}</h4>` + (its.length ? `<div class="files">${its.map(card).join('')}</div>` : '<div class="empty sm">এই অধ্যায়ের নোট শিগগিরই আসছে।</div>');
+      }).join('') + (extra.length ? `<h4 class="chh">অন্যান্য</h4><div class="files">${extra.map(card).join('')}</div>` : '') + '</div>';
+    }
     const grouped = groups.length > 1 || groups[0] > 0
       ? groups.map(g => `<h4 class="chh">${g ? `Chapter ${g} · অধ্যায় ${bn(g)}` : 'অন্যান্য'}</h4><div class="files">${items.filter(n => chOf(n) === g).map(card).join('')}</div>`).join('')
       : `<div class="files">${items.map(card).join('')}</div>`;
