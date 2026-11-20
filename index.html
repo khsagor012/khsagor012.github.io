@@ -41,7 +41,7 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 /* hero */
 .hero{padding-bottom:10px}
 .top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-.ph{width:clamp(110px,14vw,168px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 20%;border:6px solid #fff;box-shadow:0 0 0 5px var(--ink),10px 10px 0 5px var(--amber)}
+.ph{width:clamp(110px,14vw,168px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 20%;border:6px solid #fff;box-shadow:0 0 0 5px var(--ink),10px 10px 0 5px var(--blue)}
 .hi{font-family:"Anek Bangla",sans-serif;font-weight:700;color:var(--mute);font-size:18px;margin:0 0 4px}
 .hero h1{font-size:clamp(40px,6.4vw,74px);font-weight:800;letter-spacing:-.01em}
 .role{font-size:clamp(17px,1.9vw,21px);font-weight:600;margin:12px 0 0}
@@ -186,16 +186,43 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 @media(max-width:700px){.how{grid-template-columns:minmax(0,1fr)}}
 .tagline{font:800 clamp(22px,2.8vw,32px)/1.25 "Anek Bangla",sans-serif;margin:22px 0 0;max-width:30ch}
 .tagline mark{background:linear-gradient(transparent 55%,var(--amber) 55%);color:inherit;padding:0 2px}
-.sig{font:800 clamp(18px,2vw,23px)/1.35 "Anek Bangla",sans-serif;margin:14px 0 0;padding:8px 0 8px 14px;border-left:6px solid var(--amber);max-width:44ch}
+.sig{font:800 clamp(19px,2.2vw,26px)/1.3 "Anek Bangla",sans-serif;margin:14px 0 0;max-width:40ch}
+.sig em{font-style:normal;color:var(--blue)}
 .route{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:12px}
 .route span{position:relative;font:700 14.5px "Anek Bangla",sans-serif;background:var(--c,var(--ink));color:#fff;padding:5px 14px 5px 22px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%,10px 50%);margin-right:-4px}
 .route span:first-child{padding-left:14px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
-.route span:nth-child(1){--c:var(--red)}.route span:nth-child(2){--c:var(--amber);color:var(--ink)}.route span:nth-child(3){--c:var(--green)}.route span:nth-child(4){--c:var(--violet)}
+.route span:nth-child(1){--c:var(--red)}.route span:nth-child(2){--c:var(--blue)}.route span:nth-child(3){--c:var(--green)}.route span:nth-child(4){--c:var(--violet)}
 .topics{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
 .topics span{font:700 15px "Anek Bangla",sans-serif;color:var(--mute);margin-right:4px}
 .topics b{font:700 15px "Anek Bangla",sans-serif;border:2px solid var(--ink);border-radius:99px;padding:3px 14px;background:#fff}
 .topics b:nth-of-type(1){background:var(--amber);border-color:var(--amber)}
 .topics b:nth-of-type(4),.topics b:nth-of-type(5){background:var(--violet);border-color:var(--violet);color:#fff}
+.learn{margin-top:34px}
+.lh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:14px}
+.lh h2{font-size:clamp(26px,3vw,34px);font-weight:800}
+.lh p{margin:0;color:var(--mute)}
+.lgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lc{background:var(--card);border-radius:18px;padding:16px 18px;border-top:6px solid var(--c)}
+.lc .ch{display:inline-block;font:700 13px "Anek Bangla",sans-serif;background:var(--c);color:#fff;border-radius:6px;padding:1px 9px}
+.lc h3{font-size:19px;font-weight:800;margin:8px 0 10px}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tg b,.tg i{font:600 14px "Anek Bangla","Noto Sans Bengali",sans-serif;border-radius:99px;padding:3px 11px}
+.tg b{background:var(--c);color:#fff}
+.tg i{font-style:normal;background:#fff;border:1px solid var(--line)}
+.skillbar{margin-top:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr);gap:16px}
+.sb-col{border:2px solid var(--ink);border-radius:18px;padding:16px 18px}
+.sb-col h2{font-size:21px;font-weight:800;margin-bottom:12px}
+.big{display:flex;flex-wrap:wrap;gap:8px}
+.big b{font:800 17px "Anek Bangla",sans-serif;background:var(--ink);color:#fff;border-radius:10px;padding:5px 12px}
+.sb-col+.sb-col .big b{background:var(--violet)}
+.cert{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;border-radius:18px;padding:18px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+.cert .seal{width:58px;height:58px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font:800 28px system-ui;box-shadow:0 0 0 5px rgba(255,255,255,.35)}
+.cert small{display:block;font-size:13px;opacity:.85;text-transform:none}
+.cert b{display:block;font:800 22px/1.15 "Anek Bangla",sans-serif}
+.cert span{display:block;font:700 17px "Anek Bangla",sans-serif;margin-top:2px}
+.cert em{display:block;font-style:normal;font-size:13.5px;opacity:.9;margin-top:6px}
+@media(max-width:1000px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skillbar{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.lgrid{grid-template-columns:minmax(0,1fr)}}
 .why{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:8px 24px;max-width:880px}
 .why li{position:relative;padding-left:30px}
 .why li::before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
@@ -205,7 +232,7 @@ nav .wrap{display:flex;align-items:center;gap:14px;position:relative}
 .sdays{display:grid;gap:6px}
 .sdays span{font:800 clamp(19px,2vw,23px) "Anek Bangla",sans-serif;white-space:nowrap}
 .slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.slots div{background:rgba(255,255,255,.1);border-radius:14px;padding:10px 14px;border-left:5px solid var(--amber)}
+.slots div{background:rgba(255,255,255,.1);border-radius:14px;padding:10px 14px;border-left:5px solid var(--blue)}
 .slots div+div{border-left-color:var(--green)}
 .slots i{display:block;font-style:normal;font-size:14px;opacity:.85}
 .slots b{font:800 18px "Anek Bangla",sans-serif}
@@ -261,13 +288,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div>
       <h1>মোঃ কামরুল হাসান</h1>
       <p class="role"><span>ICT Teacher</span>কলেজ শাখা, লায়ন্স স্কুল অ্যান্ড কলেজ, রংপুর</p>
-      <p class="sig">আইসিটি সহজে বোঝাই, ছোট ছোট প্রজেক্টে হাতে ধরে শেখাই, আর কেউ চাইলে নিয়ে যাই অ্যাডভান্সড লেভেলে।</p>
+      <p class="sig">বইয়ের আইসিটি থেকে বাস্তবের প্রযুক্তি: <em>বুঝে শিখি, বানিয়ে দেখি।</em></p>
       <div class="route"><span>সহজে বোঝা</span><span>ছোট প্রজেক্ট</span><span>হাতে-কলমে শেখা</span><span>অ্যাডভান্সড লেভেল</span></div>
     </div>
   </div>
-  <p class="tagline">আইসিটি মুখস্থের বিষয় না, <mark>বুঝে ফেলার</mark> বিষয়।</p>
   <p class="intro">একজন ইঞ্জিনিয়ারের চোখে আইসিটি, শিক্ষকের সহজ ভাষায়। বেগম রোকেয়া বিশ্ববিদ্যালয় থেকে ইইই-তে B.Sc. ও M.Sc. (Engg.), M.Sc.-তে <b>মেধাক্রমে প্রথম</b>, আন্তর্জাতিক জার্নালে প্রকাশিত গবেষণা, আর <b>২০১২ থেকে টানা ১৪ বছরের বেশি</b> পড়ানোর অভিজ্ঞতা। কোডিং থেকে এআই, আজকের ট্রেন্ডিং প্রযুক্তিগুলো এখানে শেখানো হয় বাস্তব উদাহরণ দিয়ে, একদম সহজ করে।</p>
-  <div class="topics"><span>যা সহজ করে শেখাই</span><b>Python</b><b>Coding</b><b>Digital Logic</b><b>AI</b><b>Machine Learning</b><b>Big Data</b></div>
   <ul class="why">
     <li><b>ছবি আর উদাহরণে বোঝা</b>, না বুঝে মুখস্থ নয়</li>
     <li><b>বোর্ড প্রশ্ন বিশ্লেষণ</b> করে বানানো নিজের নোট, এখানে ফ্রি ডাউনলোড</li>
@@ -288,8 +313,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     </div>
     <a class="btn wa" href="https://wa.me/8801521463182" target="_blank" rel="noopener">সিট সীমিত, এখনই WhatsApp করো</a>
   </div>
+  <section class="learn" aria-label="সহজ করে যা শেখাই">
+    <div class="lh"><h2>সহজ করে যা শেখাই</h2><p>HSC ICT বইয়ের ৬টি অধ্যায়, ট্রেন্ডিং প্রযুক্তি থেকে কোডিং পর্যন্ত</p></div>
+    <div class="lgrid">
+      <div class="lc" style="--c:var(--violet)"><span class="ch">অধ্যায় ১</span><h3>Global Village &amp; New Tech</h3><div class="tg"><b>Virtual Reality</b><b>Robotics</b><b>Artificial Intelligence</b><b>Neural Network</b><b>Ethical Hacking</b><b>Nanotechnology</b><i>Machine Learning</i><i>Big Data</i><i>IoT</i><i>Biometrics</i><i>Bioinformatics</i><i>Cryosurgery</i></div></div>
+      <div class="lc" style="--c:var(--blue)"><span class="ch">অধ্যায় ২</span><h3>Communication &amp; Networking</h3><div class="tg"><b>Networking</b><b>Data Communication</b><i>Network Topology</i><i>Cloud Computing</i><i>Wi-Fi ও Mobile Network</i></div></div>
+      <div class="lc" style="--c:var(--red)"><span class="ch">অধ্যায় ৩</span><h3>Number System &amp; Digital Devices</h3><div class="tg"><b>Digital Devices</b><i>Number System</i><i>Boolean Algebra</i><i>Logic Gate</i><i>Adder, Encoder</i></div></div>
+      <div class="lc" style="--c:var(--pink)"><span class="ch">অধ্যায় ৪</span><h3>Web Design</h3><div class="tg"><b>HTML</b><b>CSS</b><i>Website Structure</i><i>Web Hosting</i></div></div>
+      <div class="lc" style="--c:var(--green)"><span class="ch">অধ্যায় ৫</span><h3>Programming</h3><div class="tg"><b>Python</b><b>Data Structure</b><i>Algorithm</i><i>Flowchart</i><i>ছোট ছোট প্রজেক্ট</i></div></div>
+      <div class="lc" style="--c:var(--ink)"><span class="ch">অধ্যায় ৬</span><h3>Database Management</h3><div class="tg"><b>DBMS</b><b>SQL</b><i>Table ও Relation</i><i>Query</i></div></div>
+    </div>
+  </section>
+  <section class="skillbar" aria-label="সফটওয়্যার ও প্রোগ্রামিং দক্ষতা">
+    <div class="sb-col">
+      <h2>Languages I Code In</h2>
+      <div class="big"><b>Python</b><b>C</b><b>Java</b><b>PHP</b><b>HTML</b><b>CSS</b><b>SQL</b><b>VHDL</b><b>Verilog</b></div>
+    </div>
+    <div class="sb-col">
+      <h2>Software I Work With</h2>
+      <div class="big"><b>MATLAB</b><b>SCAPS-1D</b><b>Proteus</b><b>Origin</b><b>MS Office</b><b>Photoshop</b><b>Mendeley</b><b>Linux</b></div>
+    </div>
+    <div class="cert">
+      <span class="seal">✓</span>
+      <div><small>Certification</small><b>Certified Web Developer</b><span>NESCOM</span><em>+ Top-up IT Training (Web Development), LICT প্রকল্প</em></div>
+    </div>
+  </section>
   <div class="counters">
-    <div class="ct dk" style="--c:var(--amber)"><b><i data-count="teach">১৪</i>+</b><strong>বছর পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত</span></div>
+    <div class="ct" style="--c:var(--green)"><b><i data-count="teach">১৪</i>+</b><strong>বছর পড়ানোর অভিজ্ঞতা</strong><span>২০১২ থেকে আজ পর্যন্ত</span></div>
     <div class="ct" style="--c:var(--blue)"><b>২০২৫</b><strong>থেকে লায়ন্সে</strong><span id="lionsSpan">আইসিটি শিক্ষক, কলেজ শাখা</span></div>
     <div class="ct" style="--c:var(--red)"><b>৩.৭১</b><strong>M.Sc. CGPA</strong><span>মেধাক্রম ১ম, ইইই</span></div>
     <div class="ct" style="--c:var(--violet)"><b>২১.৮৩%</b><strong>Heliyon ২০২৩</strong><span>সোলার সেল গবেষণা</span></div>
